@@ -6,7 +6,7 @@ export default function About() {
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         <div className="md:col-span-1">
           <div className="w-44 h-44 bg-slate-100 rounded-lg overflow-hidden">
-            <img src="/images/amanze.png" alt="Amanze" className="w-full h-full object-cover" />
+            <img src="/images/amanze.PNG" alt="Amanze" className="w-full h-full object-cover" />
           </div>
         </div>
         <div className="md:col-span-2 text-gray-700">
