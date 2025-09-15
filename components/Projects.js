@@ -5,21 +5,21 @@ import ServerlessDemo from "./ServerlessDemo"
 const projects = [
   {
     title: "University Jobs Board",
-    desc: "Jobs board platform for students to discover and apply for roles (UNI project).",
+    desc: "Jobs board platform for students to discover and apply for roles (UNI project). With an interactive map displaying job locations",
     tech: ["React", "Node.js", "SQL"],
-    img: "https://via.placeholder.com/800x450?text=Jobs+Board"
+    img: "/images/rock-staar-NzIV4vOBA7s-unsplash.jpg"
   },
   {
     title: "MFA Implementation",
     desc: "Implemented multi-factor authentication in company product to improve security.",
     tech: ["C#", ".NET", "Auth APIs"],
-    img: "https://via.placeholder.com/800x450?text=MFA+Implementation"
+    img: "/images/ed-hardie-RMIsZlv8qv4-unsplash.jpg"
   },
   {
     title: "Pilates Studio Website",
     desc: "Managed and refactored a local Pilates studio website, improving UX & performance.",
     tech: ["HTML", "CSS", "JS"],
-    img: "https://via.placeholder.com/800x450?text=Pilates+Website"
+    img: "/images/the-nix-company-F2w2YAZFdLI-unsplash.jpg"
   },
 ];
 
