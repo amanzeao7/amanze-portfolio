@@ -1,28 +1,19 @@
-const skills = [
-  { group: "Frontend", items: ["React", "HTML", "CSS", "JavaScript", "Blazor"] },
-  { group: "Backend & DB", items: ["C#", "SQL", "MongoDB"] },
-  { group: "Cloud & DevOps", items: ["Oracle Cloud (in progress)", "Azure DevOps", "Git/GitHub"] },
-  { group: "Data & Tools", items: ["Python", "R", "Data Analysis"] },
-];
-
 export default function Skills() {
+  const skills = [
+    "React", "Next.js", "Vue.js", "Node.js", "TypeScript",
+    "Tailwind CSS", "PostgreSQL", "Docker", "Git/GitHub",
+    "API Integrations", "Responsive Design", "Python", ".NET", 
+    "C#", "HTML", "CSS", "Data Analysis"
+  ];
+
   return (
-    <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 p-6 rounded-lg">
-    <section className="fade-up">
-      <h3 className="text-xl font-semibold">Skills</h3>
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {skills.map(s => (
-          <div key={s.group} className="p-4 border rounded-lg">
-            <h4 className="font-medium">{s.group}</h4>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {s.items.map(i => (
-                <span key={i} className="px-3 py-1 text-sm border rounded text-gray-700">{i}</span>
-              ))}
-            </div>
-          </div>
+    <section id="skills" className="fade-up bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 p-6 rounded-lg">
+      <h2 className="text-2xl font-semibold">Skills</h2>
+      <div className="mt-6 flex flex-wrap gap-3">
+        {skills.map(skill => (
+          <span key={skill} className="px-3 py-1 border rounded text-gray-600 dark:text-gray-300">{skill}</span>
         ))}
       </div>
     </section>
-    </div>
   );
 }

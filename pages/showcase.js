@@ -13,13 +13,13 @@ export default function Showcase() {
         />
       </Head>
 
-      {/* Header */}
-      <Header />
+      <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen w-full">
+        <Header />
 
-      {/* Main content */}
-      <main className="pt-24 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
-        <ShowcaseContent />
-      </main>
+        <main className="pt-24 max-w-6xl mx-auto px-6">
+          <ShowcaseContent />
+        </main>
+      </div>
     </>
   );
 }

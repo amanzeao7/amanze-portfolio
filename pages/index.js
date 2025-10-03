@@ -18,9 +18,11 @@ export default function Home() {
           content="Amanze — Full Stack Software Developer. Turning ideas into seamless digital experiences."
         />
       </Head>
-      <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
+
+      <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen w-full">
         <Header />
-        <main className="mt-12 space-y-24 max-w-6xl mx-auto px-6 md:px-12">
+
+        <main className="pt-24 max-w-6xl mx-auto px-6 space-y-24">
           <Hero />
           <About />
           <Skills />
@@ -28,6 +30,7 @@ export default function Home() {
           <Experience />
           <Contact />
         </main>
+
         <Footer />
       </div>
     </>
