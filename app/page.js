@@ -224,7 +224,7 @@ export default function Portfolio() {
               View Projects <ChevronRight className="w-5 h-5" />
             </button>
             <a
-              href="/Amanze_Anyiam-Osigwe_Data_Analyst_CV.pdf"
+              href="/Amanze_Anyiam_Osigwe_Full_Stack_CV.pdf"
               download
               className={`px-8 py-4 rounded-lg font-medium hover:scale-105 transition-all duration-300 flex items-center gap-2 ${darkMode ? 'bg-zinc-800 hover:bg-zinc-700 text-zinc-100' : 'bg-white border-2 border-zinc-300 hover:border-zinc-400 text-zinc-900'}`}
             >
