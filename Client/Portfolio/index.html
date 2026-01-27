@@ -6,7 +6,7 @@
     <title>Amanze — Web Solutions for Brands & Creatives</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400&family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-primary: #0a0a0a;
@@ -561,49 +561,6 @@
             transform: translateY(-5px);
         }
 
-        .portfolio-image {
-            aspect-ratio: 16/10;
-            background: var(--bg-tertiary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .portfolio-card:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-        }
-
-        .portfolio-card:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay span {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
         .portfolio-info {
             padding: 2rem;
         }
@@ -627,6 +584,195 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.6;
+        }
+
+        /* CSS-Only Portfolio Previews */
+        .portfolio-preview {
+            aspect-ratio: 16/10;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .preview-brand {
+            z-index: 1;
+            transition: transform 0.4s ease;
+        }
+
+        .preview-tagline {
+            z-index: 1;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-card:hover .preview-brand,
+        .portfolio-card:hover .preview-tagline {
+            transform: translateY(-5px);
+        }
+
+        .preview-line {
+            z-index: 1;
+        }
+
+        /* Architecture Preview - Dark, minimal, grid */
+        .preview-architecture {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+        }
+
+        .preview-architecture::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .preview-architecture::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(139, 115, 85, 0.15), transparent);
+        }
+
+        .preview-architecture .preview-brand {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            color: #f5f0e8;
+        }
+
+        .preview-architecture .preview-tagline {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #8b7355;
+            margin-top: 0.75rem;
+        }
+
+        .preview-architecture .preview-line {
+            width: 60px;
+            height: 1px;
+            background: #8b7355;
+            margin-top: 1.25rem;
+        }
+
+        /* Wellness Preview - Soft, organic, blobs */
+        .preview-wellness {
+            background: linear-gradient(135deg, #e8ede8 0%, #f5efe8 100%);
+        }
+
+        .preview-wellness::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(125, 154, 125, 0.4) 0%, transparent 70%);
+            top: -100px;
+            left: -50px;
+            border-radius: 50%;
+        }
+
+        .preview-wellness::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(212, 181, 160, 0.5) 0%, transparent 70%);
+            bottom: -80px;
+            right: -30px;
+            border-radius: 50%;
+        }
+
+        .preview-wellness .preview-brand {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 300;
+            font-style: italic;
+            color: #2d2d2d;
+        }
+
+        .preview-wellness .preview-tagline {
+            font-size: 0.55rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #7d9a7d;
+            margin-top: 0.5rem;
+        }
+
+        /* Coffee Preview - Warm, bold, glow */
+        .preview-coffee {
+            background: linear-gradient(135deg, #1c1815 0%, #2a2320 100%);
+        }
+
+        .preview-coffee::before {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(232, 93, 4, 0.25) 0%, transparent 60%);
+            top: 50%;
+            right: -80px;
+            transform: translateY(-50%);
+        }
+
+        .preview-coffee::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 28px;
+            height: 28px;
+            border: 2px solid #e85d04;
+            border-radius: 50%;
+        }
+
+        .preview-coffee .preview-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 400;
+            color: #f5f0e8;
+        }
+
+        .preview-coffee .preview-tagline {
+            font-size: 0.55rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #d4a574;
+            margin-top: 0.5rem;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,10,10,0.9), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         /* Pricing Philosophy */
@@ -1329,8 +1475,10 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-card" onclick="window.open('showcase-architecture.html', '_blank')">
-                    <div class="portfolio-image">
-                        <img src="architecture-preview.svg" alt="Sterling & Co Architecture">
+                    <div class="portfolio-preview preview-architecture">
+                        <span class="preview-brand">STERLING & CO</span>
+                        <span class="preview-tagline">Architecture Studio</span>
+                        <div class="preview-line"></div>
                         <div class="portfolio-overlay">
                             <span>View Project <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
                         </div>
@@ -1342,8 +1490,9 @@
                     </div>
                 </div>
                 <div class="portfolio-card" onclick="window.open('showcase-wellness.html', '_blank')">
-                    <div class="portfolio-image">
-                        <img src="wellness-preview.svg" alt="Bloom Wellness Studio">
+                    <div class="portfolio-preview preview-wellness">
+                        <span class="preview-brand">Bloom</span>
+                        <span class="preview-tagline">Wellness Studio</span>
                         <div class="portfolio-overlay">
                             <span>View Project <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
                         </div>
@@ -1355,8 +1504,9 @@
                     </div>
                 </div>
                 <div class="portfolio-card" onclick="window.open('showcase-coffee.html', '_blank')">
-                    <div class="portfolio-image">
-                        <img src="coffee-preview.svg" alt="Ember Coffee Roasters">
+                    <div class="portfolio-preview preview-coffee">
+                        <span class="preview-brand">Ember</span>
+                        <span class="preview-tagline">Specialty Coffee Roasters</span>
                         <div class="portfolio-overlay">
                             <span>View Project <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
                         </div>
