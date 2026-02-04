@@ -206,7 +206,7 @@ export default function Portfolio() {
           </div>
           <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-              Data Analyst
+              Full Stack Software Developer
             </span>
             <br />
             <span className={darkMode ? 'text-zinc-100' : 'text-zinc-900'}>
