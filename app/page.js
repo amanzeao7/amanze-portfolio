@@ -214,7 +214,7 @@ export default function Portfolio() {
             </span>
           </h1>
           <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto ${darkMode ? 'text-zinc-400' : 'text-zinc-600'}`}>
-            Transforming complex data into actionable insights. Specializing in e-commerce analytics, SQL optimization, and data-driven storytelling.
+            Full-Stack Engineer dedicated to building scalable web applications and intuitive user experiences.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
