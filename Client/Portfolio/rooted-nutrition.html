@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROOTED — Nutrition & Meal Planning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F3;--card:#FFFFFF;--heading:#2A2318;--body:#6B5E52;--accent:#7A6B44;--accent-h:#655838;
+  --terra:#C4734B;--terra-light:#F0D5C5;--olive:#6B7A4A;--olive-light:#E4EAD6;--cream:#F0EBE3;--border:#E2DCD4;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--max:1080px;--r:12px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-size:1rem;line-height:1.7;color:var(--body);background:var(--bg);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);color:var(--heading);font-weight:400;line-height:1.15}
+h1{font-size:clamp(2.2rem,5vw,3.6rem)}h2{font-size:clamp(1.7rem,3.5vw,2.4rem)}h3{font-size:1.2rem}
+h2 em,h1 em{font-style:italic;color:var(--olive)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}@media(min-width:768px){section{padding:7rem 0}}
+.label{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-family:var(--sans);font-size:.88rem;font-weight:500;border-radius:100px;transition:all .3s}
+.btn--fill{background:var(--olive);color:#fff}.btn--fill:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 24px rgba(107,122,74,.18)}
+.btn--terra{background:var(--terra);color:#fff}.btn--terra:hover{background:#A8603E;transform:translateY(-2px)}
+.btn--ghost{border:1.5px solid var(--border);color:var(--heading)}.btn--ghost:hover{border-color:var(--olive);color:var(--olive)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+
+.concept-banner{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--heading);color:rgba(255,255,255,.85);text-align:center;padding:.55rem 1rem;font-size:.78rem;font-weight:500}
+.concept-banner a{color:var(--terra);text-decoration:underline;margin-left:.4rem}
+
+.nav{position:fixed;top:34px;left:0;right:0;z-index:100;padding:1rem 0;transition:all .4s}
+.nav.scrolled{background:rgba(250,247,243,.93);backdrop-filter:blur(16px);padding:.7rem 0;box-shadow:0 1px 0 var(--border)}
+.nav__in{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-family:var(--serif);font-size:1.5rem;color:var(--heading);letter-spacing:.05em}
+.nav__logo span{color:var(--olive)}
+.nav__links{display:none;gap:2rem;list-style:none}@media(min-width:768px){.nav__links{display:flex}}
+.nav__links a{font-size:.85rem;color:var(--body);transition:color .3s}.nav__links a:hover{color:var(--olive)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:7rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--olive-light) 0%,var(--bg) 50%,var(--terra-light) 100%);opacity:.3;pointer-events:none}
+.hero__g{display:grid;gap:2.5rem;position:relative;z-index:1}
+@media(min-width:768px){.hero__g{grid-template-columns:1.1fr .9fr;align-items:center}}
+.hero__txt .label{margin-bottom:1rem;animation:fadeUp .7s ease both}
+.hero__txt h1{margin-bottom:1.1rem;animation:fadeUp .7s ease .1s both}
+.hero__txt>p{font-size:1.02rem;line-height:1.8;margin-bottom:2rem;animation:fadeUp .7s ease .2s both}
+.hero__btns{display:flex;flex-wrap:wrap;gap:.75rem;animation:fadeUp .7s ease .3s both}
+.hero__visual{aspect-ratio:4/5;background:linear-gradient(160deg,var(--olive-light),var(--olive));border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-family:var(--serif);font-size:1.2rem;text-align:center;padding:2rem;animation:fadeUp .8s ease .2s both}
+
+/* Lead magnet banner */
+.lead-mag{background:var(--olive);color:#fff;padding:2rem 0;text-align:center}
+.lead-mag__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem 2rem}
+.lead-mag p{font-size:.95rem;max-width:40ch}
+.lead-mag .btn{background:#fff;color:var(--olive)}.lead-mag .btn:hover{background:var(--cream)}
+
+/* Services */
+.svc{background:var(--card)}
+.svc__g{display:grid;gap:1.2rem;margin-top:2.5rem}
+@media(min-width:640px){.svc__g{grid-template-columns:repeat(3,1fr)}}
+.svc-c{padding:2rem 1.5rem;background:var(--bg);border-radius:var(--r);border:1px solid var(--border);transition:all .35s;display:flex;flex-direction:column}
+.svc-c:hover{border-color:var(--olive);transform:translateY(-3px);box-shadow:0 8px 28px rgba(107,122,74,.08)}
+.svc-c__ico{font-size:1.8rem;margin-bottom:1rem}
+.svc-c h3{margin-bottom:.5rem;font-family:var(--serif)}
+.svc-c__price{font-family:var(--serif);font-size:1.4rem;color:var(--olive);margin-bottom:.5rem}
+.svc-c p{font-size:.86rem;line-height:1.65;flex:1}
+.svc-c .btn{margin-top:1rem;width:100%;justify-content:center}
+
+/* Approach */
+.appr__g{display:grid;gap:2rem;margin-top:2.5rem}
+@media(min-width:768px){.appr__g{grid-template-columns:1fr 1fr;align-items:center}}
+.appr__visual{aspect-ratio:4/3;background:linear-gradient(135deg,var(--terra-light),var(--terra));border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-family:var(--serif);font-size:1.1rem;text-align:center;padding:2rem}
+.appr__txt p{margin-bottom:.8rem;font-size:.94rem}
+.appr__list{margin-top:1rem;display:flex;flex-direction:column;gap:.5rem}
+.appr__list-item{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem}
+.appr__list-item span{color:var(--olive);font-weight:600;flex-shrink:0}
+
+/* Recipes / Blog preview */
+.recipes{background:var(--card)}
+.rec__g{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:640px){.rec__g{grid-template-columns:repeat(3,1fr)}}
+.rec-card{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);transition:all .35s}
+.rec-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.05)}
+.rec-card__img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:#fff;text-align:center;padding:1rem}
+.rec-bg--1{background:linear-gradient(135deg,#8B9B6B,#6B7A4A)}
+.rec-bg--2{background:linear-gradient(135deg,#C4734B,#A85E3A)}
+.rec-bg--3{background:linear-gradient(135deg,#C9A87C,#8B7A5C)}
+.rec-card__body{padding:1.2rem}
+.rec-card__tag{font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem}
+.rec-card h3{margin-bottom:.3rem;font-size:1.05rem;font-family:var(--serif)}
+.rec-card p{font-size:.84rem;line-height:1.6}
+
+/* Testimonials */
+.test__g{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:640px){.test__g{grid-template-columns:repeat(2,1fr)}}
+.tq{padding:2rem 1.5rem;background:var(--card);border-radius:var(--r);border:1px solid var(--border)}
+.tq blockquote{font-family:var(--serif);font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--heading);margin-bottom:1rem}
+.tq cite{font-style:normal;font-size:.82rem;color:var(--body)}
+.tq cite strong{display:block;color:var(--heading);font-weight:500}
+
+/* Booking CTA */
+.cta-band{background:var(--heading);color:#fff;text-align:center;padding:4rem 1.5rem}
+.cta-band h2{color:#fff}.cta-band h2 em{color:var(--terra)}
+.cta-band p{color:rgba(255,255,255,.65);margin:.5rem auto 2rem;max-width:44ch}
+.cta-band .btn--terra:hover{background:#B85E3E}
+
+/* Footer */
+.footer{background:var(--heading);color:rgba(255,255,255,.4);padding:2.5rem 1.5rem;text-align:center;font-size:.8rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer a{color:rgba(255,255,255,.6)}.footer a:hover{color:#fff}
+.footer__logo{font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:.6rem}
+.footer__logo span{color:var(--terra)}
+</style>
+</head>
+<body>
+
+<div class="concept-banner">This is a concept project by Amanze — showcasing what a nutrition brand website could look like.<a href="../index.html">Back to portfolio</a></div>
+
+<nav class="nav" id="nav"><div class="wrap nav__in">
+  <a href="#" class="nav__logo">ROOTED<span>.</span></a>
+  <ul class="nav__links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#recipes">Recipes</a></li>
+    <li><a href="#stories">Stories</a></li>
+  </ul>
+  <a href="#book" class="btn btn--fill" style="padding:.6rem 1.3rem;font-size:.82rem">Book a Consultation</a>
+</div></nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap"><div class="hero__g">
+    <div class="hero__txt">
+      <p class="label">Nutrition · Meal Planning · Wellness</p>
+      <h1>Eat well without <em>overthinking it</em></h1>
+      <p>Personalised nutrition plans, meal prep guidance, and ongoing support — designed around your life, your goals, and food you actually enjoy eating.</p>
+      <div class="hero__btns">
+        <a href="#book" class="btn btn--fill">Book a Free Discovery Call</a>
+        <a href="#services" class="btn btn--ghost">How It Works</a>
+      </div>
+    </div>
+    <div class="hero__visual">Food photography<br>here</div>
+  </div></div>
+</section>
+
+<!-- Lead magnet -->
+<div class="lead-mag rv">
+  <div class="lead-mag__in">
+    <p><strong>Free download:</strong> 7-Day Reset Meal Plan — simple, balanced meals to kickstart healthier habits.</p>
+    <a href="#" class="btn">Download Free Guide →</a>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="svc" id="services">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Services</p>
+      <h2 class="rv">Support that fits <em>your life</em></h2>
+      <p class="rv" style="max-width:48ch;margin:.5rem auto 0">Whether you need a one-off plan or ongoing accountability, there's an option for you.</p>
+    </div>
+    <div class="svc__g rv">
+      <div class="svc-c">
+        <div class="svc-c__ico">🌱</div>
+        <h3>Starter Plan</h3>
+        <div class="svc-c__price">£95</div>
+        <p>A one-off consultation with a personalised 4-week nutrition plan. Includes a 45-minute video call, macros breakdown, and a meal plan tailored to your preferences and goals.</p>
+        <a href="#book" class="btn btn--ghost btn--sm" style="padding:.55rem 1.2rem;font-size:.8rem">Get Started</a>
+      </div>
+      <div class="svc-c" style="border-color:var(--olive);background:var(--olive-light)">
+        <div class="svc-c__ico">🥗</div>
+        <h3>Growth Programme</h3>
+        <div class="svc-c__price">£220 <span style="font-family:var(--sans);font-size:.8rem;color:var(--body)">/3 months</span></div>
+        <p>12 weeks of guided nutrition coaching. Bi-weekly check-ins, meal plan adjustments, grocery lists, recipe ideas, and WhatsApp support between sessions.</p>
+        <a href="#book" class="btn btn--fill btn--sm" style="padding:.55rem 1.2rem;font-size:.8rem">Most Popular</a>
+      </div>
+      <div class="svc-c">
+        <div class="svc-c__ico">🍽</div>
+        <h3>Meal Prep Service</h3>
+        <div class="svc-c__price">from £150 <span style="font-family:var(--sans);font-size:.8rem;color:var(--body)">/week</span></div>
+        <p>Freshly prepared, macro-balanced meals delivered to your door. Customised to your dietary needs. Available in South East London.</p>
+        <a href="#book" class="btn btn--ghost btn--sm" style="padding:.55rem 1.2rem;font-size:.8rem">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Approach -->
+<section id="approach">
+  <div class="wrap"><div class="appr__g rv">
+    <div class="appr__visual">Kitchen / prep<br>photo here</div>
+    <div>
+      <p class="label" style="margin-bottom:.8rem">My Approach</p>
+      <h2>Nutrition that works <em>with you</em></h2>
+      <br>
+      <p>I'm a registered nutritionist based in South East London. I don't believe in restrictive diets, meal replacement shakes, or one-size-fits-all plans.</p>
+      <p>Instead, I work with you to build sustainable habits around real food — meals that fit your schedule, your budget, and your taste buds.</p>
+      <div class="appr__list">
+        <div class="appr__list-item"><span>✓</span> Evidence-based, personalised plans</div>
+        <div class="appr__list-item"><span>✓</span> No calorie counting or food guilt</div>
+        <div class="appr__list-item"><span>✓</span> Real meals you'll actually want to eat</div>
+        <div class="appr__list-item"><span>✓</span> Ongoing support, not just a PDF</div>
+        <div class="appr__list-item"><span>✓</span> BSc Nutrition · Registered with AfN</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- Recipes -->
+<section class="recipes" id="recipes">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">From the Blog</p>
+      <h2 class="rv">Recipes &amp; <em>inspiration</em></h2>
+    </div>
+    <div class="rec__g rv">
+      <div class="rec-card">
+        <div class="rec-card__img rec-bg--1">Recipe photo</div>
+        <div class="rec-card__body">
+          <p class="rec-card__tag">Lunch · 20 min</p>
+          <h3>Mediterranean Grain Bowl</h3>
+          <p>Quinoa, roasted veg, chickpeas, and a lemon tahini dressing. Simple, balanced, and ready in 20 minutes.</p>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-card__img rec-bg--2">Recipe photo</div>
+        <div class="rec-card__body">
+          <p class="rec-card__tag">Breakfast · 10 min</p>
+          <h3>Spiced Sweet Potato Pancakes</h3>
+          <p>Naturally sweet, packed with fibre, and completely gluten-free. A weekend favourite.</p>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-card__img rec-bg--3">Recipe photo</div>
+        <div class="rec-card__body">
+          <p class="rec-card__tag">Dinner · 30 min</p>
+          <h3>One-Pan Harissa Salmon</h3>
+          <p>Omega-3 rich salmon with roasted vegetables and a spicy harissa glaze. One pan, minimal washing up.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem" class="rv">
+      <a href="#" class="btn btn--ghost">View All Recipes →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="stories">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Client Stories</p>
+      <h2 class="rv">Real people, real <em>results</em></h2>
+    </div>
+    <div class="test__g rv">
+      <div class="tq">
+        <blockquote>"I'd tried every diet going and nothing stuck. Working with ROOTED was completely different — no restrictions, just genuinely helpful guidance. I've lost 8kg in 4 months and I don't feel like I'm 'dieting' at all."</blockquote>
+        <cite><strong>Marcus W.</strong>Growth Programme client</cite>
+      </div>
+      <div class="tq">
+        <blockquote>"The meal prep service is a game-changer for someone like me who works 12-hour shifts. Delicious, balanced meals waiting for me at home. I genuinely look forward to eating well now."</blockquote>
+        <cite><strong>Fola A.</strong>Meal Prep client, SE London</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="book">
+  <h2>Ready to eat well <em>without the stress?</em></h2>
+  <p>Book a free 15-minute discovery call. We'll talk through your goals and find the right plan for you — no pressure, no obligation.</p>
+  <a href="#" class="btn btn--terra">Book Your Free Call →</a>
+</section>
+
+<footer class="footer">
+  <div class="footer__logo">ROOTED<span>.</span></div>
+  <p>Nutrition & Meal Planning · South East London · <a href="#">hello@rootednutrition.co.uk</a> · <a href="#">Instagram</a></p>
+  <p style="margin-top:.6rem">© 2026 ROOTED Nutrition. All rights reserved.</p>
+  <p style="margin-top:1rem;font-size:.72rem;opacity:.6">This is a concept website designed by <a href="../index.html" style="text-decoration:underline">Amanze</a></p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-90,behavior:'smooth'})}})});
+</script>
+</body>
+</html>

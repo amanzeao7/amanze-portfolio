@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOW by Nia — Lash Extensions & Beauty in Welling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF8F5;--card:#FFFFFF;--heading:#2A2A2A;--body:#6B6060;--accent:#8B5E5E;--accent-h:#744E4E;
+  --blush:#F2E0DA;--blush-light:#F9F0EC;--charcoal:#3A3535;--gold:#C9A87C;--border:#E8E2DE;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--max:1000px;--r:12px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-size:1rem;line-height:1.7;color:var(--body);background:var(--bg);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);color:var(--heading);font-weight:400;line-height:1.15}
+h1{font-size:clamp(2.2rem,5vw,3.5rem)}h2{font-size:clamp(1.7rem,3.5vw,2.4rem)}h3{font-size:1.15rem}
+h2 em,h1 em{font-style:italic;color:var(--accent)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}@media(min-width:768px){section{padding:6.5rem 0}}
+.label{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-family:var(--sans);font-size:.88rem;font-weight:500;border-radius:100px;transition:all .3s}
+.btn--fill{background:var(--charcoal);color:#fff}.btn--fill:hover{background:var(--heading);transform:translateY(-2px);box-shadow:0 8px 24px rgba(58,53,53,.18)}
+.btn--blush{background:var(--blush);color:var(--heading)}.btn--blush:hover{background:var(--blush-light);transform:translateY(-2px)}
+.btn--ghost{border:1.5px solid var(--border);color:var(--heading)}.btn--ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn--wa{background:#25D366;color:#fff}.btn--wa:hover{background:#1EB954;transform:translateY(-2px)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+
+/* Concept Banner */
+.concept-banner{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--charcoal);color:rgba(255,255,255,.85);text-align:center;padding:.55rem 1rem;font-size:.78rem;font-weight:500}
+.concept-banner a{color:var(--gold);text-decoration:underline;margin-left:.4rem}
+
+/* Nav */
+.nav{position:fixed;top:34px;left:0;right:0;z-index:100;padding:1rem 0;transition:all .4s}
+.nav.scrolled{background:rgba(251,248,245,.93);backdrop-filter:blur(16px);padding:.7rem 0;box-shadow:0 1px 0 var(--border)}
+.nav__in{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-family:var(--serif);font-size:1.6rem;color:var(--heading)}
+.nav__logo span{font-weight:300;color:var(--accent)}
+.nav__links{display:none;gap:2rem;list-style:none}
+@media(min-width:768px){.nav__links{display:flex}}
+.nav__links a{font-size:.85rem;color:var(--body);transition:color .3s}.nav__links a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:7rem;position:relative}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(180deg,var(--blush-light),var(--blush),var(--bg));opacity:.4;pointer-events:none}
+@media(max-width:767px){.hero::before{width:100%;opacity:.25}}
+.hero__g{display:grid;gap:2.5rem;position:relative;z-index:1}
+@media(min-width:768px){.hero__g{grid-template-columns:1fr 1fr;align-items:center}}
+.hero__txt .label{margin-bottom:1rem;animation:fadeUp .7s ease both}
+.hero__txt h1{margin-bottom:1rem;animation:fadeUp .7s ease .1s both}
+.hero__txt p{font-size:1.02rem;line-height:1.75;margin-bottom:2rem;animation:fadeUp .7s ease .2s both}
+.hero__btns{display:flex;flex-wrap:wrap;gap:.75rem;animation:fadeUp .7s ease .3s both}
+.hero__visual{aspect-ratio:3/4;background:linear-gradient(160deg,var(--blush),var(--accent));border-radius:200px 200px 20px 20px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-family:var(--serif);font-size:1.2rem;text-align:center;padding:2rem;animation:fadeUp .8s ease .2s both}
+@media(max-width:767px){.hero__visual{max-width:280px;margin:0 auto}}
+
+/* Services */
+.svc__g{display:grid;gap:1px;margin-top:2.5rem;background:var(--border);border-radius:var(--r);overflow:hidden}
+.svc-item{background:var(--card);padding:1.5rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;transition:background .3s}
+.svc-item:hover{background:var(--blush-light)}
+.svc-item h3{font-family:var(--serif);margin-bottom:.2rem}
+.svc-item__desc{font-size:.86rem;line-height:1.6}
+.svc-item__meta{text-align:right}
+.svc-item__price{font-family:var(--serif);font-size:1.3rem;color:var(--heading);display:block}
+.svc-item__dur{font-size:.76rem;color:var(--body);display:block;margin-top:.1rem}
+
+/* Gallery */
+.gallery{background:var(--card)}
+.gal__g{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:2rem}
+@media(min-width:640px){.gal__g{grid-template-columns:repeat(3,1fr)}}
+.gal__item{aspect-ratio:1;border-radius:var(--r);overflow:hidden;position:relative}
+.gal__before,.gal__after{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.8rem;font-weight:500;color:#fff}
+.gal__item--ba{display:grid;grid-template-columns:1fr 1fr}
+.gal__before{background:linear-gradient(135deg,#C4B0A8,#9B8B83)}
+.gal__after{background:linear-gradient(135deg,var(--blush),var(--accent))}
+.gal__item--full{background:linear-gradient(135deg,var(--blush),rgba(139,94,94,.4));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--heading);text-align:center;padding:1rem}
+
+/* Booking */
+.booking{text-align:center;position:relative}
+.booking::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),var(--blush-light),var(--bg));opacity:.4;pointer-events:none}
+.booking>*{position:relative;z-index:1}
+.booking__btns{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:2rem}
+
+/* About */
+.about__g{display:grid;gap:2.5rem}
+@media(min-width:768px){.about__g{grid-template-columns:1fr 1.2fr;align-items:center}}
+.about__photo{aspect-ratio:3/4;background:linear-gradient(160deg,var(--blush),var(--accent));border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-family:var(--serif);font-size:1.1rem}
+.about__txt p{margin-bottom:.8rem;font-size:.94rem}
+
+/* Testimonials */
+.test{background:var(--card)}
+.test__g{display:grid;gap:1rem;margin-top:2rem}
+@media(min-width:640px){.test__g{grid-template-columns:repeat(3,1fr)}}
+.tq{padding:1.5rem;background:var(--bg);border-radius:var(--r)}
+.tq__stars{color:var(--gold);font-size:.9rem;margin-bottom:.6rem;letter-spacing:.1em}
+.tq blockquote{font-size:.9rem;line-height:1.65;color:var(--heading);margin-bottom:.8rem}
+.tq cite{font-style:normal;font-size:.8rem;color:var(--body)}
+
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:transform .3s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* Footer */
+.footer{background:var(--charcoal);color:rgba(255,255,255,.5);padding:2.5rem 1.5rem;text-align:center;font-size:.8rem}
+.footer a{color:rgba(255,255,255,.7)}.footer a:hover{color:#fff}
+.footer__logo{font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:.6rem}
+</style>
+</head>
+<body>
+
+<div class="concept-banner">This is a concept project by Amanze — showcasing what a beauty brand website could look like.<a href="../index.html">Back to portfolio</a></div>
+
+<nav class="nav" id="nav"><div class="wrap nav__in">
+  <a href="#" class="nav__logo">GLOW <span>by Nia</span></a>
+  <ul class="nav__links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="#book" class="btn btn--fill" style="padding:.6rem 1.3rem;font-size:.82rem">Book Now</a>
+</div></nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap"><div class="hero__g">
+    <div class="hero__txt">
+      <p class="label">Lash Extensions · Welling, SE London</p>
+      <h1>Lashes that feel like <em>you</em></h1>
+      <p>Expert lash extensions in a relaxed, private studio in Welling. Natural, wispy, or full glam — tailored to your eye shape, your style, and how you want to feel.</p>
+      <div class="hero__btns">
+        <a href="#book" class="btn btn--fill">Book an Appointment</a>
+        <a href="https://wa.me/447000000000" class="btn btn--wa">💬 WhatsApp Me</a>
+      </div>
+    </div>
+    <div class="hero__visual">Portrait<br>photo here</div>
+  </div></div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Services & Pricing</p>
+      <h2 class="rv">What I <em>offer</em></h2>
+    </div>
+    <div class="svc__g rv">
+      <div class="svc-item">
+        <div><h3>Classic Full Set</h3><p class="svc-item__desc">Natural, subtle enhancement. One extension per natural lash.</p></div>
+        <div class="svc-item__meta"><span class="svc-item__price">£55</span><span class="svc-item__dur">90 min</span></div>
+      </div>
+      <div class="svc-item">
+        <div><h3>Hybrid Full Set</h3><p class="svc-item__desc">A mix of classic and volume for a textured, wispy look.</p></div>
+        <div class="svc-item__meta"><span class="svc-item__price">£65</span><span class="svc-item__dur">2 hrs</span></div>
+      </div>
+      <div class="svc-item">
+        <div><h3>Russian Volume Full Set</h3><p class="svc-item__desc">Lightweight fans for a full, fluffy, dramatic finish.</p></div>
+        <div class="svc-item__meta"><span class="svc-item__price">£75</span><span class="svc-item__dur">2.5 hrs</span></div>
+      </div>
+      <div class="svc-item">
+        <div><h3>Mega Volume Full Set</h3><p class="svc-item__desc">Maximum density and drama. Perfect for special occasions.</p></div>
+        <div class="svc-item__meta"><span class="svc-item__price">£85</span><span class="svc-item__dur">2.5 hrs</span></div>
+      </div>
+      <div class="svc-item">
+        <div><h3>Infill (2–3 weeks)</h3><p class="svc-item__desc">Maintenance for existing sets. Available for all styles.</p></div>
+        <div class="svc-item__meta"><span class="svc-item__price">from £35</span><span class="svc-item__dur">60–90 min</span></div>
+      </div>
+      <div class="svc-item">
+        <div><h3>Lash Removal</h3><p class="svc-item__desc">Safe, gentle removal with no damage to your natural lashes.</p></div>
+        <div class="svc-item__meta"><span class="svc-item__price">£15</span><span class="svc-item__dur">30 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Before & After</p>
+      <h2 class="rv">See the <em>difference</em></h2>
+    </div>
+    <div class="gal__g rv">
+      <div class="gal__item gal__item--ba"><div class="gal__before">Before</div><div class="gal__after">After</div></div>
+      <div class="gal__item gal__item--full">Classic set<br>natural look</div>
+      <div class="gal__item gal__item--ba"><div class="gal__before">Before</div><div class="gal__after">After</div></div>
+      <div class="gal__item gal__item--full">Hybrid set<br>wispy finish</div>
+      <div class="gal__item gal__item--ba"><div class="gal__before">Before</div><div class="gal__after">After</div></div>
+      <div class="gal__item gal__item--full">Volume set<br>full glam</div>
+    </div>
+    <p class="rv" style="text-align:center;margin-top:1.5rem;font-size:.88rem">Follow <a href="#" style="color:var(--accent);font-weight:500">@glowbynia</a> on Instagram for more results</p>
+  </div>
+</section>
+
+<!-- Booking CTA -->
+<section class="booking" id="book">
+  <div class="wrap">
+    <p class="label rv">Book Your Appointment</p>
+    <h2 class="rv">Ready for your new <em>lashes?</em></h2>
+    <p class="rv" style="max-width:44ch;margin:0 auto">Book online via Fresha or send me a WhatsApp message — I usually reply within an hour.</p>
+    <div class="booking__btns rv">
+      <a href="#" class="btn btn--fill">Book on Fresha</a>
+      <a href="https://wa.me/447000000000" class="btn btn--wa">💬 Message on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="wrap"><div class="about__g rv">
+    <div class="about__photo">Nia photo here</div>
+    <div>
+      <p class="label" style="margin-bottom:.8rem">About Me</p>
+      <h2>Hi, I'm <em>Nia</em></h2>
+      <br>
+      <p>I'm a certified lash technician based in Welling, South East London. I trained at an accredited academy and I've been perfecting my craft for over 3 years.</p>
+      <p>I work from my private home studio — it's clean, calm, and all about you. Every appointment is one-to-one, so you get my full attention and a set that's completely tailored to you.</p>
+      <p>I use only premium Korean silk lashes and medical-grade adhesive. Your natural lashes always come first.</p>
+      <p style="color:var(--accent);font-weight:500;margin-top:.8rem">Fully insured · Certified · Patch tests required</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- Testimonials -->
+<section class="test" id="reviews">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Client Love</p>
+      <h2 class="rv">What they <em>say</em></h2>
+    </div>
+    <div class="test__g rv">
+      <div class="tq">
+        <div class="tq__stars">★★★★★</div>
+        <blockquote>Honestly the best lashes I've ever had. Nia is so talented and her studio is lovely. Won't go anywhere else now.</blockquote>
+        <cite>— Jess M.</cite>
+      </div>
+      <div class="tq">
+        <div class="tq__stars">★★★★★</div>
+        <blockquote>I was so nervous getting lashes for the first time but Nia made me feel completely at ease. They looked so natural!</blockquote>
+        <cite>— Aaliyah K.</cite>
+      </div>
+      <div class="tq">
+        <div class="tq__stars">★★★★★</div>
+        <blockquote>Been going to Nia for over a year now. She's consistent, professional, and always remembers exactly how I like them.</blockquote>
+        <cite>— Rachel T.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/447000000000" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.317 0-4.472-.702-6.264-1.905l-.438-.295-2.648.888.888-2.648-.295-.438A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<footer class="footer">
+  <div class="footer__logo">GLOW by Nia</div>
+  <p>Welling, SE London · <a href="#">@glowbynia</a> · <a href="https://wa.me/447000000000">WhatsApp</a></p>
+  <p style="margin-top:.6rem">© 2026 GLOW by Nia. All rights reserved.</p>
+  <p style="margin-top:1rem;font-size:.72rem;opacity:.6">This is a concept website designed by <a href="../index.html" style="text-decoration:underline">Amanze</a></p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-90,behavior:'smooth'})}})});
+</script>
+</body>
+</html>

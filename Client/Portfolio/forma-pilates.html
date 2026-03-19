@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORMA Pilates — Reformer Pilates in Clapham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF6;--card:#FFFFFF;--heading:#1A1A1A;--body:#5C5C5C;--accent:#4A7C67;--accent-h:#3D6A58;
+  --sage-light:#E8F0EB;--sage-xlight:#F2F7F4;--warm:#C9A87C;--warm-light:#F0E6D8;--border:#E8E5DF;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--max:1100px;--r:12px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-size:1rem;line-height:1.7;color:var(--body);background:var(--bg);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--heading);font-weight:400;line-height:1.15}
+h1{font-size:clamp(2.4rem,5.5vw,4rem)}h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}h3{font-size:clamp(1.1rem,2vw,1.35rem);font-family:var(--sans);font-weight:500}
+h2 em{font-style:italic;color:var(--accent)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}@media(min-width:768px){section{padding:7rem 0}}
+.label{font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-family:var(--sans);font-size:.88rem;font-weight:500;border-radius:100px;transition:all .3s;letter-spacing:.01em}
+.btn--fill{background:var(--accent);color:#fff}.btn--fill:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,124,103,.18)}
+.btn--ghost{border:1.5px solid var(--border);color:var(--heading)}.btn--ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Reveal */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+
+/* ── Concept Banner ── */
+.concept-banner{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--heading);color:rgba(255,255,255,.85);text-align:center;padding:.55rem 1rem;font-size:.78rem;font-weight:500;letter-spacing:.03em}
+.concept-banner a{color:var(--warm);text-decoration:underline;margin-left:.4rem}
+
+/* ── Nav ── */
+.nav{position:fixed;top:34px;left:0;right:0;z-index:100;padding:1rem 0;transition:all .4s;background:transparent}
+.nav.scrolled{background:rgba(250,250,246,.92);backdrop-filter:blur(16px);padding:.7rem 0;box-shadow:0 1px 0 var(--border)}
+.nav__in{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-family:var(--serif);font-size:1.5rem;color:var(--heading);letter-spacing:.08em}
+.nav__links{display:none;gap:2rem;align-items:center;list-style:none}
+@media(min-width:768px){.nav__links{display:flex}}
+.nav__links a{font-size:.85rem;font-weight:400;color:var(--body);transition:color .3s}.nav__links a:hover{color:var(--accent)}
+
+/* ── Hero ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:7rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--sage-xlight) 0%,var(--bg) 50%,var(--warm-light) 100%);opacity:.5;pointer-events:none}
+.hero__c{position:relative;z-index:1;max-width:620px}
+.hero .label{margin-bottom:1rem;animation:fadeUp .7s ease both}
+.hero h1{margin-bottom:1.2rem;animation:fadeUp .7s ease .1s both}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero__sub{font-size:1.05rem;line-height:1.8;margin-bottom:2rem;animation:fadeUp .7s ease .2s both}
+.hero__btns{display:flex;flex-wrap:wrap;gap:.75rem;animation:fadeUp .7s ease .3s both}
+.hero__img{position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:42%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--sage-light),var(--accent));border-radius:200px 200px 40px 40px;opacity:.12;display:none}
+@media(min-width:1024px){.hero__img{display:block}}
+
+/* ── About ── */
+.about{background:var(--card)}
+.about__g{display:grid;gap:2.5rem}@media(min-width:768px){.about__g{grid-template-columns:1fr 1fr;gap:4rem;align-items:center}}
+.about__visual{aspect-ratio:4/5;background:linear-gradient(160deg,var(--sage-light) 0%,rgba(74,124,103,.15) 100%);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;color:var(--accent);text-align:center;padding:2rem;line-height:1.4}
+.about p{margin-bottom:.8rem;font-size:.95rem}
+
+/* ── Classes ── */
+.classes__g{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:640px){.classes__g{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.classes__g{grid-template-columns:repeat(3,1fr)}}
+.class-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .35s}
+.class-card:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.05);border-color:var(--accent)}
+.class-card__top{padding:1.8rem 1.5rem 1rem;position:relative}
+.class-card__duration{position:absolute;top:1.2rem;right:1.2rem;font-size:.72rem;font-weight:500;color:var(--accent);background:var(--sage-light);padding:.25rem .6rem;border-radius:100px}
+.class-card h3{margin-bottom:.4rem}
+.class-card p{font-size:.88rem;line-height:1.65}
+.class-card__bottom{padding:.8rem 1.5rem;background:var(--sage-xlight);display:flex;justify-content:space-between;align-items:center;font-size:.82rem;font-weight:500}
+.class-card__bottom span{color:var(--accent)}
+
+/* ── Timetable ── */
+.timetable{background:var(--card)}
+.tt__grid{margin-top:2rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tt__table{width:100%;min-width:640px;border-collapse:collapse}
+.tt__table th{font-family:var(--sans);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding:.8rem 1rem;text-align:left;border-bottom:2px solid var(--accent);white-space:nowrap}
+.tt__table td{padding:.7rem 1rem;font-size:.85rem;border-bottom:1px solid var(--border);vertical-align:top}
+.tt__table tr:hover td{background:var(--sage-xlight)}
+.tt__class{font-weight:500;color:var(--heading)}
+.tt__book{color:var(--accent);font-weight:500;font-size:.8rem;cursor:pointer;transition:color .2s}
+.tt__book:hover{color:var(--accent-h);text-decoration:underline}
+
+/* ── Instructors ── */
+.team__g{display:grid;gap:1.5rem;margin-top:2.5rem}
+@media(min-width:640px){.team__g{grid-template-columns:repeat(3,1fr)}}
+.team-card{text-align:center}
+.team-card__photo{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--sage-light),rgba(74,124,103,.2));border-radius:var(--r);margin-bottom:1rem;display:flex;align-items:flex-end;justify-content:center;font-family:var(--serif);font-size:3rem;color:rgba(74,124,103,.3);padding-bottom:1.5rem}
+.team-card h3{margin-bottom:.2rem;font-family:var(--serif);font-weight:600;font-size:1.15rem}
+.team-card__role{font-size:.82rem;color:var(--accent);font-weight:500;margin-bottom:.4rem}
+.team-card p{font-size:.85rem;line-height:1.6;max-width:32ch;margin:0 auto}
+
+/* ── Pricing ── */
+.pricing{background:var(--card)}
+.price__g{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:640px){.price__g{grid-template-columns:repeat(3,1fr)}}
+.pr{padding:2rem 1.5rem;background:var(--bg);border-radius:var(--r);border:1px solid var(--border);display:flex;flex-direction:column;transition:all .3s;text-align:center}
+.pr:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pr--feat{background:var(--accent);border-color:var(--accent);color:rgba(255,255,255,.8)}
+.pr--feat h3,.pr--feat .pr__price{color:#fff}
+.pr--feat .label{color:var(--warm)}
+.pr--feat:hover{box-shadow:0 12px 40px rgba(74,124,103,.25)}
+.pr .label{margin-bottom:.5rem}
+.pr h3{margin-bottom:.8rem;font-family:var(--serif);font-size:1.2rem}
+.pr__price{font-family:var(--serif);font-size:2rem;color:var(--accent);margin-bottom:.4rem}
+.pr__price span{font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--body)}
+.pr--feat .pr__price span{color:rgba(255,255,255,.55)}
+.pr__freq{font-size:.82rem;margin-bottom:1rem;color:var(--body-light,#999)}
+.pr p{font-size:.86rem;line-height:1.65;flex:1}
+.pr .btn{margin-top:1.2rem;width:100%;justify-content:center}
+.pr--feat .btn--fill{background:#fff;color:var(--accent)}
+.pr--feat .btn--fill:hover{background:var(--warm-light);transform:translateY(-2px)}
+
+/* ── Testimonial ── */
+.quote-section{text-align:center;position:relative}
+.quote-section blockquote{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--heading);line-height:1.5;max-width:42ch;margin:0 auto 1.5rem;font-style:italic}
+.quote-section cite{font-style:normal;font-size:.88rem;color:var(--body)}
+.quote-section cite strong{display:block;color:var(--heading);font-weight:500}
+
+/* ── Location ── */
+.location{background:var(--card)}
+.loc__g{display:grid;gap:2rem;margin-top:2rem}
+@media(min-width:768px){.loc__g{grid-template-columns:1fr 1fr;align-items:center}}
+.loc__map{aspect-ratio:4/3;background:var(--sage-xlight);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--body);border:1px solid var(--border)}
+.loc__info h3{margin-bottom:.8rem;font-family:var(--serif);font-size:1.4rem}
+.loc__info p{font-size:.92rem;margin-bottom:.5rem}
+.loc__info a{color:var(--accent);font-weight:500}
+
+/* ── CTA ── */
+.cta-band{background:var(--accent);color:#fff;text-align:center;padding:4rem 1.5rem}
+.cta-band h2{color:#fff;margin-bottom:.6rem}
+.cta-band h2 em{color:var(--warm)}
+.cta-band p{color:rgba(255,255,255,.75);margin:0 auto 2rem;max-width:44ch}
+.cta-band .btn--fill{background:#fff;color:var(--accent)}.cta-band .btn--fill:hover{background:var(--warm-light)}
+
+/* ── Footer ── */
+.footer{background:var(--heading);color:rgba(255,255,255,.5);padding:2.5rem 1.5rem;text-align:center;font-size:.8rem}
+.footer a{color:rgba(255,255,255,.7);transition:color .3s}.footer a:hover{color:#fff}
+.footer__logo{font-family:var(--serif);font-size:1.2rem;color:#fff;letter-spacing:.08em;margin-bottom:.8rem}
+</style>
+</head>
+<body>
+
+<!-- Concept Banner -->
+<div class="concept-banner">This is a concept project by Amanze — showcasing what a studio website could look like.<a href="../index.html">Back to portfolio</a></div>
+
+<!-- Nav -->
+<nav class="nav" id="nav"><div class="wrap nav__in">
+  <a href="#" class="nav__logo">FORMA</a>
+  <ul class="nav__links">
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#timetable">Timetable</a></li>
+    <li><a href="#team">Instructors</a></li>
+    <li><a href="#pricing">Membership</a></li>
+    <li><a href="#location">Find Us</a></li>
+  </ul>
+  <a href="#" class="btn btn--fill btn--sm" style="padding:.6rem 1.4rem;font-size:.82rem">Book a Class</a>
+</div></nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap"><div class="hero__c">
+    <p class="label">Reformer Pilates · Clapham</p>
+    <h1>Move with <em>intention</em></h1>
+    <p class="hero__sub">Boutique Reformer Pilates in the heart of Clapham. Small classes, expert instructors, and a space designed to help you feel strong, balanced, and completely yourself.</p>
+    <div class="hero__btns">
+      <a href="#" class="btn btn--fill">Book Your First Class</a>
+      <a href="#classes" class="btn btn--ghost">View Timetable</a>
+    </div>
+  </div></div>
+  <div class="hero__img" aria-hidden="true"></div>
+</section>
+
+<!-- About -->
+<section class="about">
+  <div class="wrap"><div class="about__g">
+    <div class="about__visual rv">Studio interior<br>image here</div>
+    <div class="rv">
+      <p class="label" style="margin-bottom:.8rem">Our Studio</p>
+      <h2>Pilates that meets you <em>where you are</em></h2>
+      <br>
+      <p>FORMA was founded on a simple belief: Pilates should be accessible, challenging, and deeply personal. Whether you're recovering from injury, training for performance, or simply looking for a practice that fits your life — we're here for it.</p>
+      <p>Our Clapham studio is home to 12 Balanced Body reformers, a team of passionate instructors, and a community that lifts each other up. Classes are capped at 12 so you always get the attention you deserve.</p>
+      <p style="color:var(--accent);font-weight:500;margin-top:1rem">Classes from £18 · First class free for new members</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- Classes -->
+<section id="classes">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Our Classes</p>
+      <h2 class="rv" style="margin-bottom:.3rem">Find your <em>practice</em></h2>
+      <p class="rv" style="margin:0 auto;max-width:48ch">From restorative flows to high-intensity reformer circuits — there's a class for every body and every goal.</p>
+    </div>
+    <div class="classes__g rv">
+      <div class="class-card">
+        <div class="class-card__top">
+          <span class="class-card__duration">50 min</span>
+          <h3>Foundations</h3>
+          <p>Perfect for beginners. Learn the essentials of reformer movement with careful attention to alignment and breath.</p>
+        </div>
+        <div class="class-card__bottom"><span>All levels</span> <span>Book →</span></div>
+      </div>
+      <div class="class-card">
+        <div class="class-card__top">
+          <span class="class-card__duration">50 min</span>
+          <h3>Flow</h3>
+          <p>Our signature class. A dynamic, full-body workout blending strength, flexibility, and controlled movement.</p>
+        </div>
+        <div class="class-card__bottom"><span>Intermediate</span> <span>Book →</span></div>
+      </div>
+      <div class="class-card">
+        <div class="class-card__top">
+          <span class="class-card__duration">50 min</span>
+          <h3>Sculpt</h3>
+          <p>High-intensity reformer circuits designed to challenge your endurance and build lean, functional strength.</p>
+        </div>
+        <div class="class-card__bottom"><span>Advanced</span> <span>Book →</span></div>
+      </div>
+      <div class="class-card">
+        <div class="class-card__top">
+          <span class="class-card__duration">55 min</span>
+          <h3>Restore</h3>
+          <p>A slower, deeper practice focused on mobility, release, and recovery. Ideal post-workout or for injury rehab.</p>
+        </div>
+        <div class="class-card__bottom"><span>All levels</span> <span>Book →</span></div>
+      </div>
+      <div class="class-card">
+        <div class="class-card__top">
+          <span class="class-card__duration">50 min</span>
+          <h3>Pre/Postnatal</h3>
+          <p>Safe, supportive Pilates adapted for pregnancy and postpartum recovery. Instructor-led with modifications throughout.</p>
+        </div>
+        <div class="class-card__bottom"><span>All levels</span> <span>Book →</span></div>
+      </div>
+      <div class="class-card">
+        <div class="class-card__top">
+          <span class="class-card__duration">25 min</span>
+          <h3>Express</h3>
+          <p>A focused half-length session for busy schedules. Full-body reformer work, zero wasted time.</p>
+        </div>
+        <div class="class-card__bottom"><span>All levels</span> <span>Book →</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timetable -->
+<section class="timetable" id="timetable">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Timetable</p>
+      <h2 class="rv">This week at <em>FORMA</em></h2>
+    </div>
+    <div class="tt__grid rv">
+      <table class="tt__table">
+        <thead>
+          <tr><th>Day</th><th>Time</th><th>Class</th><th>Instructor</th><th>Spots</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>07:00</td><td class="tt__class">Flow</td><td>Maya</td><td>4 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Monday</td><td>09:30</td><td class="tt__class">Foundations</td><td>Priya</td><td>7 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Monday</td><td>12:15</td><td class="tt__class">Express</td><td>Maya</td><td>6 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Monday</td><td>18:00</td><td class="tt__class">Sculpt</td><td>James</td><td>2 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Tuesday</td><td>07:00</td><td class="tt__class">Sculpt</td><td>James</td><td>5 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Tuesday</td><td>10:00</td><td class="tt__class">Pre/Postnatal</td><td>Priya</td><td>8 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Tuesday</td><td>17:30</td><td class="tt__class">Flow</td><td>Maya</td><td>3 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Wednesday</td><td>07:00</td><td class="tt__class">Flow</td><td>Priya</td><td>6 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Wednesday</td><td>12:15</td><td class="tt__class">Express</td><td>James</td><td>9 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Wednesday</td><td>18:30</td><td class="tt__class">Restore</td><td>Maya</td><td>10 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Thursday</td><td>07:00</td><td class="tt__class">Sculpt</td><td>Maya</td><td>4 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Thursday</td><td>09:30</td><td class="tt__class">Foundations</td><td>Priya</td><td>8 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Thursday</td><td>18:00</td><td class="tt__class">Flow</td><td>James</td><td>1 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Friday</td><td>07:00</td><td class="tt__class">Flow</td><td>Maya</td><td>5 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Friday</td><td>10:00</td><td class="tt__class">Restore</td><td>Priya</td><td>11 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Saturday</td><td>09:00</td><td class="tt__class">Flow</td><td>Maya</td><td>3 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Saturday</td><td>10:30</td><td class="tt__class">Sculpt</td><td>James</td><td>6 left</td><td class="tt__book">Book</td></tr>
+          <tr><td>Sunday</td><td>10:00</td><td class="tt__class">Restore</td><td>Priya</td><td>9 left</td><td class="tt__book">Book</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Instructors -->
+<section id="team">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Our Instructors</p>
+      <h2 class="rv">Taught by people who <em>care</em></h2>
+    </div>
+    <div class="team__g rv">
+      <div class="team-card">
+        <div class="team-card__photo">M</div>
+        <h3>Maya Chen</h3>
+        <p class="team-card__role">Studio Director · 8 years</p>
+        <p>Trained in classical and contemporary Pilates with a background in dance rehabilitation.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card__photo">P</div>
+        <h3>Priya Sharma</h3>
+        <p class="team-card__role">Pre/Postnatal Specialist · 6 years</p>
+        <p>Certified in pre and postnatal exercise with a passion for supporting women through every stage.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card__photo">J</div>
+        <h3>James Okafor</h3>
+        <p class="team-card__role">Strength & Conditioning · 5 years</p>
+        <p>Former personal trainer who brings athletic precision to every reformer session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div style="text-align:center">
+      <p class="label rv">Membership</p>
+      <h2 class="rv">Simple, flexible <em>pricing</em></h2>
+      <p class="rv" style="margin:0 auto;max-width:44ch">No contracts. No joining fees. Cancel anytime.</p>
+    </div>
+    <div class="price__g rv">
+      <div class="pr">
+        <p class="label">Pay as you go</p>
+        <h3>Drop-In</h3>
+        <div class="pr__price">£22</div>
+        <p class="pr__freq">per class</p>
+        <p>Perfect if you want flexibility. Book any class, any time. No commitment.</p>
+        <a href="#" class="btn btn--ghost btn--sm">Book a Class</a>
+      </div>
+      <div class="pr pr--feat">
+        <p class="label">Most popular</p>
+        <h3>Unlimited</h3>
+        <div class="pr__price">£159 <span>/mo</span></div>
+        <p class="pr__freq">billed monthly</p>
+        <p>Unlimited classes every month. Priority booking. Guest passes twice a month.</p>
+        <a href="#" class="btn btn--fill btn--sm">Join Now</a>
+      </div>
+      <div class="pr">
+        <p class="label">Great value</p>
+        <h3>8 Class Pack</h3>
+        <div class="pr__price">£144</div>
+        <p class="pr__freq">£18 per class · valid 6 weeks</p>
+        <p>Our best per-class rate. Ideal for regulars who attend twice a week.</p>
+        <a href="#" class="btn btn--ghost btn--sm">Buy Pack</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="quote-section">
+  <div class="wrap rv">
+    <blockquote>"FORMA has completely changed how I move. The instructors genuinely care, the studio is beautiful, and I actually look forward to working out now."</blockquote>
+    <cite><strong>Sophie L.</strong>Member since 2024</cite>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="location" id="location">
+  <div class="wrap"><div class="loc__g rv">
+    <div class="loc__map">Map placeholder — 42 Clapham High Street</div>
+    <div class="loc__info">
+      <p class="label" style="margin-bottom:.5rem">Find Us</p>
+      <h3>42 Clapham High Street</h3>
+      <p>London SW4 7UR</p>
+      <p>2 minutes from Clapham Common station</p>
+      <br>
+      <p><strong>Opening Hours</strong></p>
+      <p>Mon–Fri: 6:30am – 8:30pm</p>
+      <p>Sat–Sun: 8:00am – 2:00pm</p>
+      <br>
+      <a href="#">Get Directions →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>Ready to start your <em>practice?</em></h2>
+  <p>Your first class is on us. Book a free intro session and experience FORMA for yourself.</p>
+  <a href="#" class="btn btn--fill">Book Your Free Class</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer__logo">FORMA</div>
+  <p>42 Clapham High Street, London SW4 7UR · <a href="#">hello@formapilates.co.uk</a> · <a href="#">Instagram</a></p>
+  <p style="margin-top:.6rem">© 2026 FORMA Pilates. All rights reserved.</p>
+  <p style="margin-top:1rem;font-size:.72rem;opacity:.6">This is a concept website designed by <a href="../index.html" style="text-decoration:underline">Amanze</a></p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-90,behavior:'smooth'})}})});
+</script>
+</body>
+</html>
