@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Amanze builds websites for studios, salons and wellness brands across the UK. Beautiful, fast, and simple enough that you'll actually enjoy updating it.">
-<meta name="keywords" content="web design UK, pilates studio website, salon website, beauty brand website, wellness web design, booking website">
+<meta name="description" content="Technical consultant building websites, custom tools, automation systems, and business efficiency solutions for UK businesses.">
+<meta name="keywords" content="web design UK, technical consultant, custom tools, automation, business efficiency, pilates studio website, wellness web design">
 <meta name="author" content="Amanze">
-<meta property="og:title" content="Amanze — Websites for Studios, Salons & Wellness Brands">
-<meta property="og:description" content="Your website should bring in bookings while you sleep — not give you another thing to worry about.">
+<meta property="og:title" content="Amanze — Websites, Tools & Technical Solutions">
+<meta property="og:description" content="Websites that work. Custom tools that scale. Systems that actually save you time.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F5F1EB">
-<title>Amanze — Websites for Studios, Salons & Wellness Brands</title>
+<title>Amanze — Websites, Tools & Technical Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -164,6 +164,7 @@ section{padding:5rem 0}
 @media(min-width:1024px){
   .svc__g .svc-c:nth-child(4){grid-column:1/2}
   .svc__g .svc-c:nth-child(5){grid-column:2/4}
+  .svc__g .svc-c:nth-child(6){grid-column:2/4}
 }
 
 /* ═══════════════════════════════════════════════
@@ -205,6 +206,8 @@ section{padding:5rem 0}
    PRICING
    ═══════════════════════════════════════════════ */
 .pricing{background:var(--bg-alt)}
+.pricing__note{padding:1.2rem 1.5rem;background:rgba(45,106,79,.03);border-left:3px solid var(--second);border-radius:0 var(--r) var(--r) 0;margin-bottom:2rem;font-size:.9rem;line-height:1.6;color:var(--body)}
+.pricing__note strong{color:var(--heading)}
 .price__g{display:grid;gap:1rem;margin-top:2.5rem}
 @media(min-width:640px){.price__g{grid-template-columns:1fr 1fr}}
 @media(min-width:1024px){.price__g{grid-template-columns:repeat(4,1fr)}}
@@ -222,18 +225,25 @@ section{padding:5rem 0}
 .pr-c>p{font-size:.86rem;line-height:1.7;flex:1}
 .pr-c .btn{margin-top:1.2rem;width:100%;justify-content:center}
 
+/* Custom projects section */
+.custom-proj{margin-top:3rem;padding:2rem 1.5rem;background:var(--bg);border-radius:var(--r);border:1px solid var(--border-lt)}
+.custom-proj h3{margin-bottom:.8rem}
+.custom-proj > p{font-size:.9rem;line-height:1.7;margin-bottom:1rem}
+.custom-proj .btn{margin-top:1.2rem}
+
 /* ═══════════════════════════════════════════════
    PORTFOLIO
    ═══════════════════════════════════════════════ */
 .port__g{display:grid;gap:1.2rem;margin-top:2.5rem}
 @media(min-width:640px){.port__g{grid-template-columns:1fr 1fr}}
-.proj{border-radius:var(--r);overflow:hidden;background:var(--bg-alt);border:1px solid var(--border-lt);transition:all .4s}
+.proj{border-radius:var(--r);overflow:hidden;background:var(--bg-alt);border:1px solid var(--border-lt);transition:all .4s;cursor:pointer}
 .proj:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,.05)}
 .proj__img{aspect-ratio:16/10;overflow:hidden;position:relative}
 .proj__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .proj:hover .proj__img img{transform:scale(1.03)}
 .proj__badge{position:absolute;top:.8rem;left:.8rem;padding:.25rem .7rem;background:var(--bg-alt);border-radius:100px;font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);z-index:2}
 .proj__badge--con{color:var(--second)}
+.proj__badge--wip{color:#D97706}
 .proj__body{padding:1.3rem}
 .proj__tag{font-size:.72rem;font-weight:600;color:var(--second);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem}
 .proj h3{margin-bottom:.35rem}
@@ -244,6 +254,8 @@ section{padding:5rem 0}
 .ph--chess{background:linear-gradient(135deg,#2C2C2C,#555)}
 .ph--bob{background:linear-gradient(135deg,#1B3A4B,#4A8FA8)}
 .ph--refresh{background:linear-gradient(135deg,#8FB996,#2D6A4F)}
+.ph--bracknell{background:linear-gradient(135deg,#4A7C8C,#2D5F6F)}
+.ph--urban{background:linear-gradient(135deg,#D4A373,#8B6B4A)}
 .ph--pilates{background:linear-gradient(135deg,#C5D5C0,#2D6A4F)}
 .ph--beauty{background:linear-gradient(135deg,#E8C4C4,#9B6B6B)}
 .ph--travel{background:linear-gradient(135deg,#1B2838,#3D6B99)}
@@ -343,7 +355,7 @@ section{padding:5rem 0}
   <a href="#work" onclick="closeMob()">Work</a>
   <a href="#pricing" onclick="closeMob()">Pricing</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
-  <a href="#contact" class="btn btn--fill" onclick="closeMob()">Let's Talk About Your Site</a>
+  <a href="#contact" class="btn btn--fill" onclick="closeMob()">Let's Talk</a>
 </div>
 
 <!-- ═══════════════════════════════════════════
@@ -352,11 +364,11 @@ section{padding:5rem 0}
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero__c">
-      <p class="label">Websites for studios, salons & wellness brands</p>
-      <h1>Your website should bring in bookings while you sleep — not give you another thing to <em>worry about</em></h1>
-      <p class="hero__sub">I build websites for studios, salons, and wellness brands across the UK. Beautiful, fast, and simple enough that you'll actually enjoy updating it.</p>
+      <p class="label">Websites, tools & technical solutions</p>
+      <h1>Websites that work. Custom tools that <em>scale</em>. Systems that save you <em>time</em></h1>
+      <p class="hero__sub">I build websites, automation tools, and custom systems for UK businesses — from Pilates studios to enterprise workflows. Beautiful, fast, and built to actually move the needle for your business.</p>
       <div class="hero__btns">
-        <a href="#contact" class="btn btn--fill">Let's Talk About Your Site</a>
+        <a href="#contact" class="btn btn--fill">Let's Talk About Your Project</a>
         <a href="#work" class="btn btn--ghost">See My Work</a>
       </div>
     </div>
@@ -375,11 +387,11 @@ section{padding:5rem 0}
     <div class="about__g">
       <div class="about__txt rv">
         <p class="label sh">About</p>
-        <h2>Crafting websites with <em>your clients</em> in mind</h2>
+        <h2>Technical solutions <em>tailored</em> to your business</h2>
         <br>
-        <p>I'm Amanze — a web developer based in South East London. I specialise in building websites for fitness studios, beauty businesses, and wellness brands across the UK.</p>
-        <p>I've helped Pilates studios launch new locations, built booking-integrated sites for multi-location brands, and rebuilt online stores for beauty suppliers. My clients don't just get a website — they get something they can actually manage themselves, with a proper handover so they're never left dependent on a developer.</p>
-        <p class="about__cta-line">You focus on your business. I'll handle the technical.</p>
+        <p>I'm Amanze — a technical consultant based in South East London. I specialise in building websites, custom tools, and automation systems for UK businesses across fitness, beauty, wellness, and beyond.</p>
+        <p>I've launched websites for multi-location Pilates studios, built automation scripts that connect spreadsheets to design software, created systems that save teams hours of manual work every week, and delivered custom tools that power business operations. My clients get solutions they can trust, with clear handover documentation and ongoing support.</p>
+        <p class="about__cta-line">You focus on your business. I'll handle the technical architecture.</p>
       </div>
       <div class="about__stats rv-stag rv">
         <div class="stat">
@@ -396,7 +408,7 @@ section{padding:5rem 0}
         </div>
         <div class="stat">
           <span class="stat__n">100%</span>
-          <span class="stat__l">Training included with every project</span>
+          <span class="stat__l">Training & handover included</span>
         </div>
       </div>
     </div>
@@ -415,31 +427,37 @@ section{padding:5rem 0}
       <div class="svc-c">
         <div class="svc-c__ico">🏠</div>
         <h3>Studio &amp; Salon Websites</h3>
-        <p>A complete website designed around your services, team, and location. Integrated with your booking system so clients book directly. Mobile-first, Google-friendly, and easy for you to update.</p>
+        <p>Complete websites for fitness studios, salons, and wellness brands. Integrated with booking systems, client-focused design, mobile-first, and built for you to update yourself.</p>
       </div>
 
       <div class="svc-c">
         <div class="svc-c__ico">🛍</div>
         <h3>Online Stores</h3>
-        <p>Sell products, gift vouchers, or course access online. Clean, trustworthy shop pages that match your brand — built on a platform that suits your business.</p>
+        <p>Sell products, gift vouchers, courses, or services online. Clean, trustworthy shop pages that match your brand — built on platforms suited to your business needs.</p>
       </div>
 
       <div class="svc-c">
         <div class="svc-c__ico">✨</div>
         <h3>Redesign &amp; Rebrand</h3>
-        <p>Already have a site but it's looking tired, slow, or hard to manage? I'll rebuild it with a fresh look, faster performance, and a setup you can actually maintain.</p>
+        <p>Already have a site but it's tired, slow, or hard to manage? I'll rebuild it with fresh design, faster performance, and a setup you can actually maintain yourself.</p>
       </div>
 
       <div class="svc-c">
-        <div class="svc-c__ico">📄</div>
-        <h3>Landing Pages</h3>
-        <p>A single, focused page for a launch, promotion, or new location. Designed to convert visitors into bookings or sign-ups — fast to build, high impact.</p>
+        <div class="svc-c__ico">🤖</div>
+        <h3>Custom Tools &amp; Automation</h3>
+        <p>Build custom solutions that solve your specific problems — Google Sheets integrations, data processing pipelines, design automation, or internal admin tools. Purpose-built for your workflow.</p>
+      </div>
+
+      <div class="svc-c">
+        <div class="svc-c__ico">📈</div>
+        <h3>Systems &amp; Optimization</h3>
+        <p>SEO optimization, performance tuning, security audits, and technical strategy. Ensure your digital infrastructure is running at peak efficiency.</p>
       </div>
 
       <div class="svc-c">
         <div class="svc-c__ico">🤝</div>
         <h3>Ongoing Support</h3>
-        <p>A monthly retainer for updates, tweaks, and technical peace of mind. Ideal if you want a developer on call without hiring in-house. You focus on your clients — I'll keep your site running smoothly.</p>
+        <p>A monthly retainer for updates, tweaks, and technical peace of mind. Ideal if you want a technical partner without hiring in-house. You focus on clients — I keep systems running smoothly.</p>
       </div>
 
     </div>
@@ -460,28 +478,28 @@ section{padding:5rem 0}
       <div class="p-step">
         <div class="p-step__n">01</div>
         <h3>Discovery Call</h3>
-        <p>A 20-minute chat about your business — what's working, what's not, and what you want your website to do. No jargon, no hard sell.</p>
+        <p>A 20-minute chat about your business, goals, and challenges. What's working, what isn't, what you need your solution to do. No jargon, no pressure.</p>
       </div>
       <div class="p-step">
         <div class="p-step__n">02</div>
-        <h3>Design &amp; Build</h3>
-        <p>I design and build your site, checking in with you at key milestones. You'll see progress throughout — not just a big reveal at the end.</p>
+        <h3>Scope &amp; Quote</h3>
+        <p>Based on our chat, I'll put together a clear proposal with scope, timeline, and pricing. For web projects, expect £250–£3,500+. Custom tools are quoted based on complexity.</p>
       </div>
       <div class="p-step">
         <div class="p-step__n">03</div>
-        <h3>Review &amp; Refine</h3>
-        <p>Two rounds of revisions to make sure everything feels right. Copy, images, layout — we fine-tune until you're genuinely happy.</p>
+        <h3>Design &amp; Build</h3>
+        <p>I design and build your solution with check-ins at key milestones. You'll see progress throughout — not just a big reveal at the end. 25% deposit to get started.</p>
       </div>
       <div class="p-step">
         <div class="p-step__n">04</div>
         <h3>Launch &amp; Handover</h3>
-        <p>Your site goes live. Then we do a full training session so you know how to update everything yourself. You'll get a recorded walkthrough and a written guide.</p>
+        <p>Your project goes live. Full training session, recorded walkthrough, and written guide so you know how to use and maintain it. 30 days of free support included.</p>
       </div>
     </div>
 
     <!-- Platforms -->
     <div class="plat rv">
-      <p>I'll recommend the right platform for your business — whether that's a simple drag-and-drop builder or something fully custom-built.</p>
+      <p>I'll recommend the right platform and tools for your specific needs — whether that's WordPress, Shopify, custom-built solutions, or specialized tools for automation.</p>
       <div class="plat__row">
         <div class="plat__item">
           <svg class="pi" viewBox="0 0 32 32"><path d="M4.4 4.4h10.2v10.2H4.4zm13 0h10.2v10.2H17.4zm-13 13h10.2v10.2H4.4zm13 0h10.2v10.2H17.4z" fill-opacity=".7"/></svg>
@@ -500,20 +518,20 @@ section{padding:5rem 0}
           <span>Shopify</span>
         </div>
         <div class="plat__item">
+          <svg class="pi" viewBox="0 0 32 32"><rect x="6" y="10" width="20" height="12" rx="3" fill-opacity=".55"/><path d="M11 15h10M11 19h6" stroke="var(--bg)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Custom Build</span>
+        </div>
+        <div class="plat__item">
           <svg class="pi" viewBox="0 0 32 32"><circle cx="16" cy="16" r="5" fill-opacity=".6"/><circle cx="8" cy="10" r="3" fill-opacity=".35"/><circle cx="24" cy="10" r="3" fill-opacity=".35"/><circle cx="8" cy="22" r="3" fill-opacity=".35"/><circle cx="24" cy="22" r="3" fill-opacity=".35"/></svg>
-          <span>Canva</span>
+          <span>Automation</span>
         </div>
         <div class="plat__item">
           <svg class="pi" viewBox="0 0 32 32"><path d="M6 8l10 16L26 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
           <span>Next.js</span>
         </div>
         <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><rect x="6" y="10" width="20" height="12" rx="3" fill-opacity=".55"/><path d="M11 15h10M11 19h6" stroke="var(--bg)" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span>Headless CMS</span>
-        </div>
-        <div class="plat__item">
           <svg class="pi" viewBox="0 0 32 32"><path d="M6 6h8v8H6zm12 0h8v8h-8zM6 18h8v8H6zm12 0h8v8h-8z" fill-opacity=".4"/><path d="M10 10l12 12M22 10L10 22" stroke="currentColor" stroke-width="1.8"/></svg>
-          <span>Bespoke</span>
+          <span>Integrations</span>
         </div>
       </div>
     </div>
@@ -526,42 +544,42 @@ section{padding:5rem 0}
 <section id="handover">
   <div class="wrap">
     <p class="label sh rv">Training &amp; Handover</p>
-    <h2 class="rv">You'll know how to run your site <em>with confidence</em></h2>
-    <p class="rv" style="margin-top:.5rem">Every project includes a full handover — so you're never left dependent on a developer.</p>
+    <h2 class="rv">You'll know how to run your <em>systems</em> with confidence</h2>
+    <p class="rv" style="margin-top:.5rem">Every project includes full handover and training — so you're never left dependent on a developer.</p>
 
     <div class="hand__g rv-stag rv">
       <div class="hand-c">
         <div class="hand-c__ico">📹</div>
         <div>
           <h4>Live Training Session</h4>
-          <p>A 45–60 minute screen-share where you learn to update your own site: pages, text, images, team members, class schedules — everything.</p>
+          <p>A 45–60 minute screen-share where you learn to use and manage your solution. How to update content, run processes, troubleshoot common issues.</p>
         </div>
       </div>
       <div class="hand-c">
         <div class="hand-c__ico">🎬</div>
         <div>
           <h4>Recorded Walkthrough</h4>
-          <p>A recording of the session so you can revisit it anytime. No more "how do I do that again?" messages.</p>
+          <p>A recording of the training session so you can revisit it anytime. Perfect for new team members or when you need a refresher.</p>
         </div>
       </div>
       <div class="hand-c">
         <div class="hand-c__ico">📋</div>
         <div>
-          <h4>Written Quick Guide</h4>
-          <p>A short document with annotated screenshots covering the most common tasks. Designed for someone with zero technical knowledge.</p>
+          <h4>Written Documentation</h4>
+          <p>Clear, annotated guides covering common tasks and troubleshooting. Designed for someone with zero technical knowledge.</p>
         </div>
       </div>
       <div class="hand-c">
         <div class="hand-c__ico">🛡</div>
         <div>
           <h4>30-Day Support</h4>
-          <p>After launch, 30 days of free support for questions, minor tweaks, and anything you need help with as you settle in.</p>
+          <p>After launch, 30 days of free support for questions, tweaks, and anything you need help with as you settle in.</p>
         </div>
       </div>
     </div>
 
     <div class="hand__cta rv">
-      <p>Every project includes a full training session, recorded walkthrough, and written guide — so you're never left wondering how to update your own site.</p>
+      <p>Every project includes full training, recorded walkthroughs, and written guides — so you're never left wondering how your systems work or how to update them.</p>
     </div>
   </div>
 </section>
@@ -574,7 +592,11 @@ section{padding:5rem 0}
     <div class="center">
       <p class="label sh rv">Pricing</p>
       <h2 class="rv">Transparent pricing, <em>no surprises</em></h2>
-      <p class="rv" style="margin-top:.5rem;margin-left:auto;margin-right:auto">Every project is scoped after a discovery call. Here's a starting guide so you know what to expect.</p>
+      <p class="rv" style="margin-top:.5rem;margin-left:auto;margin-right:auto">Every project starts with a discovery call. Website prices are fixed. Custom builds are scoped to your requirements. <strong>Final pricing subject to scope and requirements.</strong></p>
+    </div>
+
+    <div class="pricing__note rv">
+      <strong>How it works:</strong> Website projects have fixed pricing (see below). Custom tools, automation, and advanced systems are quoted based on complexity and scope. <strong>25% deposit to get started.</strong> We'll confirm the full scope and final price after our discovery call.
     </div>
 
     <div class="price__g rv-stag rv">
@@ -582,23 +604,23 @@ section{padding:5rem 0}
         <p class="label">Getting started</p>
         <h3>Starter</h3>
         <div class="pr-c__price">£250–800</div>
-        <p>A single-page site, landing page or simple site for a new launch, promotion, or event. Mobile responsive, with a contact form or booking link and training handover.</p>
+        <p>A single-page site, landing page, or simple site for a launch or promotion. Mobile responsive, contact form or booking link, and full training handover.</p>
         <a href="#contact" class="btn btn--ghost btn--sm">Get in Touch</a>
       </div>
 
       <div class="pr-c pr-c--feat">
         <p class="label">Most popular</p>
         <h3>Growth</h3>
-        <div class="pr-c__price">From £800-2000</div>
-        <p>A full multi-page website for an established studio,business salon, or brand. Booking integration , payment processing and more complex features, SEO, two revision rounds, full training package, and 30-day post-launch support.</p>
+        <div class="pr-c__price">£800–2,000</div>
+        <p>A full multi-page website for an established business. Booking integration, payment processing, complex features, SEO, two revision rounds, full training, and 30-day post-launch support.</p>
         <a href="#contact" class="btn btn--fill btn--sm">Let's Talk</a>
       </div>
 
       <div class="pr-c">
         <p class="label">For bigger ambitions</p>
         <h3>Scale</h3>
-        <div class="pr-c__price">From £3,500</div>
-        <p>E-commerce, multi-location sites, or builds with custom functionality. Online stores, complex integrations, and extended support options.</p>
+        <div class="pr-c__price">£3,500+</div>
+        <p>E-commerce, multi-location sites, or custom functionality. Complex integrations, extended support, and bespoke solutions built to your specifications.</p>
         <a href="#contact" class="btn btn--ghost btn--sm">Get in Touch</a>
       </div>
 
@@ -606,9 +628,15 @@ section{padding:5rem 0}
         <p class="label">Ongoing</p>
         <h3>Retainer</h3>
         <div class="pr-c__price">£50–250 <span>/month</span></div>
-        <p>A developer on call for content updates, design tweaks, hosting management, and monthly check-ins. Priority response within 24–48 hours.</p>
+        <p>A technical partner on call for updates, tweaks, hosting, monitoring, and strategy. Priority support within 24–48 hours.</p>
         <a href="#contact" class="btn btn--ghost btn--sm">Get in Touch</a>
       </div>
+    </div>
+
+    <div class="custom-proj rv">
+      <h3>Custom Tools &amp; Automation</h3>
+      <p>Building custom AI tools, automation workflows, data processing systems, or business efficiency solutions? These are scoped individually based on complexity, integrations, and requirements. <strong>25% deposit to get started.</strong> Let's chat about your needs in a discovery call and I'll put together a clear quote.</p>
+      <a href="#contact" class="btn btn--ghost btn--sm">Request a Quote</a>
     </div>
   </div>
 </section>
@@ -619,11 +647,37 @@ section{padding:5rem 0}
 <section id="work">
   <div class="wrap">
     <p class="label sh rv">Selected Work</p>
-    <h2 class="rv">Projects across wellness, beauty &amp; <em>lifestyle</em></h2>
+    <h2 class="rv">Projects across wellness, community &amp; <em>digital infrastructure</em></h2>
 
     <div class="port__g rv-stag rv">
 
-      <!-- REAL: IfeChessDiaries -->
+      <!-- LIVE: Refresh Health Club -->
+      <a href="https://refresh-health.com/" target="_blank" rel="noopener" class="proj">
+        <div class="proj__img">
+          <div class="ph ph--refresh">Refresh<br>Health Club</div>
+          <span class="proj__badge">Live</span>
+        </div>
+        <div class="proj__body">
+          <p class="proj__tag">Pilates Studio</p>
+          <h3>Refresh Health Club</h3>
+          <p>Multi-location Reformer Pilates brand across Reading, Pangbourne, and Wokingham. Full site rebuild with booking integration, location pages, and seamless client experience.</p>
+        </div>
+      </a>
+
+      <!-- LIVE: Bracknell Third Spaces -->
+      <a href="https://www.bracknellthirdspaces.com/" target="_blank" rel="noopener" class="proj">
+        <div class="proj__img">
+          <div class="ph ph--bracknell">Bracknell<br>Third Spaces</div>
+          <span class="proj__badge">Live</span>
+        </div>
+        <div class="proj__body">
+          <p class="proj__tag">Community / Civic</p>
+          <h3>Bracknell Third Spaces</h3>
+          <p>Community space initiative. Clean information architecture, accessible design, and comprehensive event and space booking management for Bracknell Council.</p>
+        </div>
+      </a>
+
+      <!-- LIVE: IfeChessDiaries -->
       <a href="https://ifechessdiaries.com/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
           <div class="ph ph--chess">IfeChess<br>Diaries</div>
@@ -632,11 +686,11 @@ section{padding:5rem 0}
         <div class="proj__body">
           <p class="proj__tag">Photography</p>
           <h3>IfeChessDiaries</h3>
-          <p>Chess photography portfolio with responsive gallery, lightbox, scroll animations, and a clean editorial feel.</p>
+          <p>Chess photography portfolio with responsive gallery, lightbox animations, and clean editorial aesthetic. Fast load times, beautiful presentation.</p>
         </div>
       </a>
 
-      <!-- REAL: Bricks of Business -->
+      <!-- LIVE: Bricks of Business -->
       <a href="https://bricksofbusiness.netlify.app/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
           <div class="ph ph--bob">Bricks of<br>Business</div>
@@ -645,22 +699,22 @@ section{padding:5rem 0}
         <div class="proj__body">
           <p class="proj__tag">Business Consulting</p>
           <h3>Bricks of Business</h3>
-          <p>Website for a business consulting firm — clear service positioning, actionable messaging, and a professional web presence that builds client trust.</p>
+          <p>Professional consulting firm website. Clear service positioning, actionable messaging, and strong call-to-action strategy that builds client trust.</p>
         </div>
       </a>
 
-      <!-- REAL: Refresh Health Club (coming soon) -->
-      <div class="proj" style="opacity:.7;pointer-events:none">
+      <!-- WIP: Urban Beauty -->
+      <a href="https://urban-beauty-one.vercel.app/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
-          <div class="ph ph--refresh">Refresh<br>Health Club</div>
-          <span class="proj__badge">Coming Soon</span>
+          <div class="ph ph--urban">Urban<br>Beauty</div>
+          <span class="proj__badge proj__badge--wip">In Progress</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Pilates Studio</p>
-          <h3>Refresh Health Club</h3>
-          <p>Multi-location Reformer Pilates brand. Booking integration, new studio launch pages, and full brand refresh across three sites.</p>
+          <p class="proj__tag">Beauty & Aesthetics</p>
+          <h3>Urban Beauty</h3>
+          <p>Beauty brand e-commerce and portfolio site. Service gallery, product showcase, online booking, and seamless customer experience. Currently in active development.</p>
         </div>
-      </div>
+      </a>
 
       <!-- CONCEPT: FORMA Pilates -->
       <a href="work/forma-pilates.html" class="proj">
@@ -671,7 +725,7 @@ section{padding:5rem 0}
         <div class="proj__body">
           <p class="proj__tag">Wellness Studio</p>
           <h3>FORMA Pilates</h3>
-          <p>Boutique Reformer studio concept — class timetable with booking integration, instructor profiles, and membership pricing.</p>
+          <p>Boutique Reformer studio concept — class timetable with booking integration, instructor profiles, and membership pricing structure.</p>
         </div>
       </a>
 
@@ -684,7 +738,7 @@ section{padding:5rem 0}
         <div class="proj__body">
           <p class="proj__tag">Beauty</p>
           <h3>GLOW by Nia</h3>
-          <p>Solo aesthetician portfolio — service menu, before/after gallery, online booking, and WhatsApp integration for a home-studio lash tech.</p>
+          <p>Solo aesthetician portfolio — service menu, before/after gallery, online booking, and direct messaging for home-studio booking.</p>
         </div>
       </a>
 
@@ -697,7 +751,7 @@ section{padding:5rem 0}
         <div class="proj__body">
           <p class="proj__tag">Travel</p>
           <h3>ATLAS Travel Concierge</h3>
-          <p>Luxury travel planning service — destination showcases, multi-step enquiry form, and testimonial carousel.</p>
+          <p>Luxury travel planning service — destination showcases, multi-step enquiry form, and testimonial carousel for high-touch service positioning.</p>
         </div>
       </a>
 
@@ -710,7 +764,7 @@ section{padding:5rem 0}
         <div class="proj__body">
           <p class="proj__tag">Health &amp; Wellness</p>
           <h3>ROOTED Nutrition</h3>
-          <p>Nutritionist and meal prep service — consultation booking, recipe blog, service packages, and lead magnet download.</p>
+          <p>Nutritionist and meal prep service — consultation booking, recipe blog, service packages, and lead magnet download for client acquisition.</p>
         </div>
       </a>
 
@@ -730,11 +784,11 @@ section{padding:5rem 0}
 
     <div class="test__g rv-stag rv">
       <div class="tq">
-        <blockquote>Amanze completely transformed our online presence across all three studio locations. He understood our brand from day one and delivered a site we're genuinely proud of — and we can update it ourselves without any stress.</blockquote>
-        <cite><strong>Refresh Health Club</strong>Reformer Pilates, Reading &amp; Wokingham</cite>
+        <blockquote>Amanze completely transformed our online presence across all three locations. He understood our brand instantly and delivered a site we're genuinely proud of — and we can update it ourselves without any stress or technical knowledge.</blockquote>
+        <cite><strong>Refresh Health Club</strong>Reformer Pilates, Reading & Wokingham</cite>
       </div>
       <div class="tq">
-        <blockquote>Working with Amanze was effortless. He took the time to understand what I was going for with my photography portfolio and delivered something that looks exactly how I envisioned it — clean, fast, and professional.</blockquote>
+        <blockquote>Working with Amanze was effortless from start to finish. He took time to understand the vision, delivered exactly what I imagined, and made the whole process smooth. The site looks incredible and loads like a dream.</blockquote>
         <cite><strong>Ife Olayinka</strong>IfeChessDiaries, Liverpool</cite>
       </div>
     </div>
@@ -744,6 +798,7 @@ section{padding:5rem 0}
       <span>Refresh Health Club</span>
       <span>IfeChessDiaries</span>
       <span>Bricks of Business</span>
+      <span>Bracknell Third Spaces</span>
     </div>
   </div>
 </section>
@@ -754,8 +809,8 @@ section{padding:5rem 0}
 <section id="contact">
   <div class="wrap">
     <p class="label sh rv">Get in Touch</p>
-    <h2 class="rv">Let's get your site <em>sorted</em></h2>
-    <p class="rv" style="margin-top:.5rem">Tell me a bit about your project and I'll get back to you within 24 hours.</p>
+    <h2 class="rv">Let's talk about your <em>next project</em></h2>
+    <p class="rv" style="margin-top:.5rem">Tell me a bit about what you need and I'll get back to you within 24 hours with a clear next step.</p>
 
     <div class="contact__g rv">
       <form class="contact__form" action="https://formspree.io/f/xovadwaq" method="POST">
@@ -774,16 +829,17 @@ section{padding:5rem 0}
           <select id="service" name="service">
             <option value="">Select a service</option>
             <option value="Studio / Salon Website">Studio / Salon Website</option>
-            <option value="Online Store">Online Store</option>
+            <option value="E-commerce / Online Store">E-commerce / Online Store</option>
             <option value="Redesign & Rebrand">Redesign &amp; Rebrand</option>
-            <option value="Landing Page">Landing Page</option>
+            <option value="Custom Tool / Automation">Custom Tool / Automation</option>
+            <option value="Systems & Optimization">Systems &amp; Optimization</option>
             <option value="Ongoing Support">Ongoing Support</option>
             <option value="Not sure yet">Not sure yet — let's chat</option>
           </select>
         </div>
         <div class="field">
           <label for="message">Tell me about your project</label>
-          <textarea id="message" name="message" placeholder="What does your business do? What do you need from your website?"></textarea>
+          <textarea id="message" name="message" placeholder="What does your business do? What problem are we solving?"></textarea>
         </div>
         <button type="submit" class="btn btn--fill" style="align-self:flex-start">Send Message
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -794,8 +850,8 @@ section{padding:5rem 0}
         <div class="alt-card">
           <div class="alt-card__ico">📞</div>
           <div>
-            <h4>Prefer to chat?</h4>
-            <p>Book a free 20-minute call — no obligation, no jargon.</p>
+            <h4>Quick chat?</h4>
+            <p>Book a free 20-minute discovery call — no obligation, no jargon.</p>
             <a href="https://cal.com" target="_blank" rel="noopener">Book a Call →</a>
           </div>
         </div>
@@ -803,7 +859,7 @@ section{padding:5rem 0}
           <div class="alt-card__ico">💬</div>
           <div>
             <h4>WhatsApp</h4>
-            <p>Quick question? Send me a message directly.</p>
+            <p>Quick question or project idea? Message me directly.</p>
             <a href="https://wa.me/447000000000" target="_blank" rel="noopener">Message on WhatsApp →</a>
           </div>
         </div>
@@ -811,12 +867,12 @@ section{padding:5rem 0}
           <div class="alt-card__ico">✉️</div>
           <div>
             <h4>Email</h4>
-            <p>Old school works too.</p>
+            <p>Old school always works.</p>
             <a href="mailto:amanzeao7@gmail.com">amanzeao7@gmail.com</a>
           </div>
         </div>
 
-        <p class="contact__note">No obligation, no jargon, no hard sell. Just a conversation about what your site could do for you.</p>
+        <p class="contact__note">No obligation, no jargon, no hard sell. Just a conversation about what we can build together.</p>
       </div>
     </div>
   </div>
