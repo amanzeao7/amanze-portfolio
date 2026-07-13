@@ -15,9 +15,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    RESET & VARIABLES
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 :root {
   --bg: #F5F1EB;
   --bg-alt: #FFFFFF;
@@ -43,9 +43,9 @@ a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 ul{list-style:none}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    TYPOGRAPHY
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 h1,h2,h3,h4{font-family:var(--serif);color:var(--heading);font-weight:400;line-height:1.18}
 h1{font-size:clamp(2.1rem,5vw,3.5rem)}
 h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
@@ -54,17 +54,17 @@ h2 em,h1 em{font-style:italic;color:var(--accent)}
 p{max-width:62ch}
 .label{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--second)}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    LAYOUT
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
 .wrap--sm{max-width:780px;margin:0 auto;padding:0 1.5rem}
 section{padding:5rem 0}
 @media(min-width:768px){section{padding:7rem 0}}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    BUTTONS
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-size:.88rem;font-weight:500;border-radius:100px;transition:all .3s;letter-spacing:.015em}
 .btn--fill{background:var(--accent);color:#fff}
 .btn--fill:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(45,106,79,.18)}
@@ -75,9 +75,9 @@ section{padding:5rem 0}
 .btn--dark:hover{background:#333;transform:translateY(-2px)}
 .btn svg{width:16px;height:16px;flex-shrink:0}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    REVEAL ANIMATIONS
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
@@ -91,9 +91,9 @@ section{padding:5rem 0}
 .rv-stag.vis>*:nth-child(6){transition-delay:.34s}
 .rv-stag.vis>*{opacity:1;transform:translateY(0)}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    NAV
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.15rem 0;transition:all .4s}
 .nav.scrolled{background:rgba(245,241,235,.93);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:.75rem 0;box-shadow:0 1px 0 var(--border)}
 .nav__in{display:flex;align-items:center;justify-content:space-between}
@@ -119,9 +119,9 @@ section{padding:5rem 0}
 .mob a:hover{color:var(--accent)}
 .mob .btn{margin-top:auto;justify-content:center}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    HERO
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-top:5rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-15%;right:-8%;width:550px;height:550px;background:radial-gradient(circle,rgba(212,163,115,.11) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-8%;left:-4%;width:380px;height:380px;background:radial-gradient(circle,rgba(45,106,79,.05) 0%,transparent 70%);border-radius:50%;pointer-events:none}
@@ -135,9 +135,9 @@ section{padding:5rem 0}
 @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
 @media(max-width:767px){.hero__scroll{display:none}}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    ABOUT
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .about{background:var(--bg-alt)}
 .about__g{display:grid;gap:2.5rem}
 @media(min-width:768px){.about__g{grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}}
@@ -148,9 +148,9 @@ section{padding:5rem 0}
 .stat__n{font-family:var(--serif);font-size:2rem;color:var(--accent);display:block;margin-bottom:.2rem}
 .stat__l{font-size:.82rem;line-height:1.4;color:var(--body)}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    SERVICES
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .svc__g{display:grid;gap:1rem;margin-top:2.5rem}
 @media(min-width:640px){.svc__g{grid-template-columns:1fr 1fr}}
 @media(min-width:1024px){.svc__g{grid-template-columns:repeat(3,1fr)}}
@@ -167,9 +167,9 @@ section{padding:5rem 0}
   .svc__g .svc-c:nth-child(6){grid-column:2/4}
 }
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    PROCESS
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .process{background:var(--bg-alt)}
 .proc__steps{display:grid;gap:0;margin-top:2.5rem}
 @media(min-width:768px){.proc__steps{grid-template-columns:repeat(4,1fr)}}
@@ -190,9 +190,9 @@ section{padding:5rem 0}
 /* Platform SVG icons */
 .pi{width:32px;height:32px;fill:var(--heading)}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    HANDOVER
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .hand__g{display:grid;gap:1rem;margin-top:2.5rem}
 @media(min-width:640px){.hand__g{grid-template-columns:1fr 1fr}}
 .hand-c{display:flex;gap:1rem;padding:1.5rem;background:var(--bg-alt);border-radius:var(--r);border:1px solid var(--border-lt)}
@@ -202,9 +202,31 @@ section{padding:5rem 0}
 .hand__cta{margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(45,106,79,.04);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0}
 .hand__cta p{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--heading);max-width:56ch}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
+   CASE STUDIES
+   ═══════════════════════════════════════════ */
+.cs-container{margin-bottom:2rem!important;padding:2.5rem 2rem!important;background:var(--bg)!important;border-radius:var(--r)!important;border:1px solid var(--border-lt)!important}
+@media(min-width:768px){.cs-container{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}}
+.cs-container h3{margin-bottom:1.2rem}
+.cs-container .label{margin-bottom:.5rem;display:block}
+.cs-div{margin-bottom:1.5rem}
+.cs-div p:first-child{font-weight:500;color:var(--heading);margin-bottom:.4rem}
+.cs-div p:last-child{font-size:.9rem;line-height:1.7}
+.cs-badge{display:flex;flex-direction:column;justify-content:center;text-align:center;padding:2rem;border-radius:var(--r);color:#fff}
+.cs-badge p:first-child{font-size:.9rem;margin-bottom:1rem;opacity:.9}
+.cs-badge p:last-child{font-family:var(--serif);font-size:1.3rem;line-height:1.5}
+.cs-badge a{display:inline-block;margin-top:1.5rem;padding:.7rem 1.5rem;background:#fff;border-radius:100px;font-size:.85rem;font-weight:500;transition:all .3s}
+.cs-badge a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.cs-refresh{background:linear-gradient(135deg,#8FB996,#2D6A4F)}
+.cs-refresh a{color:#2D6A4F}
+.cs-bracknell{background:linear-gradient(135deg,#4A7C8C,#2D5F6F)}
+.cs-bracknell a{color:#2D5F6F}
+.cs-marcianno{background:linear-gradient(135deg,#8B4513,#5C2E0F)}
+.cs-marcianno a{color:#8B4513}
+
+/* ═══════════════════════════════════════════
    PRICING
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .pricing{background:var(--bg-alt)}
 .pricing__note{padding:1.2rem 1.5rem;background:rgba(45,106,79,.03);border-left:3px solid var(--second);border-radius:0 var(--r) var(--r) 0;margin-bottom:2rem;font-size:.9rem;line-height:1.6;color:var(--body)}
 .pricing__note strong{color:var(--heading)}
@@ -231,9 +253,9 @@ section{padding:5rem 0}
 .custom-proj > p{font-size:.9rem;line-height:1.7;margin-bottom:1rem}
 .custom-proj .btn{margin-top:1.2rem}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    PORTFOLIO
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .port__g{display:grid;gap:1.2rem;margin-top:2.5rem}
 @media(min-width:640px){.port__g{grid-template-columns:1fr 1fr}}
 .proj{border-radius:var(--r);overflow:hidden;background:var(--bg-alt);border:1px solid var(--border-lt);transition:all .4s;cursor:pointer}
@@ -261,9 +283,9 @@ section{padding:5rem 0}
 .ph--travel{background:linear-gradient(135deg,#1B2838,#3D6B99)}
 .ph--nutrition{background:linear-gradient(135deg,#D4A373,#8B6B4A)}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    TESTIMONIALS
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .test{background:var(--bg-alt)}
 .test__g{display:grid;gap:1.2rem;margin-top:2.5rem}
 @media(min-width:768px){.test__g{grid-template-columns:1fr 1fr}}
@@ -275,9 +297,9 @@ section{padding:5rem 0}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2rem 3rem;padding:2.5rem 0 0;margin-top:2.5rem;border-top:1px solid var(--border-lt)}
 .trust span{font-size:.82rem;font-weight:500;color:var(--body-light);letter-spacing:.02em}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    CONTACT
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .contact__g{display:grid;gap:2.5rem;margin-top:2.5rem}
 @media(min-width:768px){.contact__g{grid-template-columns:1.2fr .8fr}}
 .contact__form{display:flex;flex-direction:column;gap:1rem}
@@ -297,9 +319,9 @@ section{padding:5rem 0}
 .contact__note{margin-top:1rem;font-size:.88rem;color:var(--body-light);font-style:italic;text-align:center}
 @media(min-width:768px){.contact__note{text-align:left}}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    FOOTER
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .footer{background:var(--heading);color:rgba(255,255,255,.55);padding:3rem 0 2rem}
 .footer__in{display:flex;flex-direction:column;gap:1.5rem;align-items:center;text-align:center}
 @media(min-width:768px){.footer__in{flex-direction:row;justify-content:space-between;text-align:left}}
@@ -310,15 +332,15 @@ section{padding:5rem 0}
 .footer__links a:hover{color:#fff}
 .footer__copy{font-size:.75rem;width:100%;text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);margin-top:.5rem}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    SECTION HEADERS (shared)
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .sh{margin-bottom:.6rem}
 .sh+p{margin-bottom:0;font-size:.95rem}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    UTILITY
-   ═══════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 .mb-0{margin-bottom:0!important}
 .center{text-align:center}
 .center p{margin-left:auto;margin-right:auto}
@@ -337,6 +359,7 @@ section{padding:5rem 0}
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#process">How It Works</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#pricing">Pricing</a></li>
     </ul>
@@ -352,6 +375,7 @@ section{padding:5rem 0}
   <a href="#about" onclick="closeMob()">About</a>
   <a href="#services" onclick="closeMob()">Services</a>
   <a href="#process" onclick="closeMob()">How It Works</a>
+  <a href="#case-studies" onclick="closeMob()">Case Studies</a>
   <a href="#work" onclick="closeMob()">Work</a>
   <a href="#pricing" onclick="closeMob()">Pricing</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
@@ -423,43 +447,36 @@ section{padding:5rem 0}
     <p class="label sh rv">What I Offer</p>
     <h2 class="rv">Built around what your <em>business</em> actually needs</h2>
     <div class="svc__g rv-stag rv">
-
       <div class="svc-c">
         <div class="svc-c__ico">🏠</div>
         <h3>Studio &amp; Salon Websites</h3>
         <p>Complete websites for fitness studios, salons, and wellness brands. Integrated with booking systems, client-focused design, mobile-first, and built for you to update yourself.</p>
       </div>
-
       <div class="svc-c">
         <div class="svc-c__ico">🛍</div>
         <h3>Online Stores</h3>
         <p>Sell products, gift vouchers, courses, or services online. Clean, trustworthy shop pages that match your brand — built on platforms suited to your business needs.</p>
       </div>
-
       <div class="svc-c">
         <div class="svc-c__ico">✨</div>
         <h3>Redesign &amp; Rebrand</h3>
         <p>Already have a site but it's tired, slow, or hard to manage? I'll rebuild it with fresh design, faster performance, and a setup you can actually maintain yourself.</p>
       </div>
-
       <div class="svc-c">
         <div class="svc-c__ico">🤖</div>
         <h3>Custom Tools &amp; Automation</h3>
         <p>Build custom solutions that solve your specific problems — Google Sheets integrations, data processing pipelines, design automation, or internal admin tools. Purpose-built for your workflow.</p>
       </div>
-
       <div class="svc-c">
         <div class="svc-c__ico">📈</div>
         <h3>Systems &amp; Optimization</h3>
         <p>SEO optimization, performance tuning, security audits, and technical strategy. Ensure your digital infrastructure is running at peak efficiency.</p>
       </div>
-
       <div class="svc-c">
         <div class="svc-c__ico">🤝</div>
         <h3>Ongoing Support</h3>
         <p>A monthly retainer for updates, tweaks, and technical peace of mind. Ideal if you want a technical partner without hiring in-house. You focus on clients — I keep systems running smoothly.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -473,7 +490,6 @@ section{padding:5rem 0}
       <p class="label sh rv">How It Works</p>
       <h2 class="rv">Simple, transparent, and <em>no jargon</em></h2>
     </div>
-
     <div class="proc__steps rv-stag rv">
       <div class="p-step">
         <div class="p-step__n">01</div>
@@ -496,8 +512,6 @@ section{padding:5rem 0}
         <p>Your project goes live. Full training session, recorded walkthrough, and written guide so you know how to use and maintain it. 30 days of free support included.</p>
       </div>
     </div>
-
-    <!-- Platforms -->
     <div class="plat rv">
       <p>I'll recommend the right platform and tools for your specific needs — whether that's WordPress, Shopify, custom-built solutions, or specialized tools for automation.</p>
       <div class="plat__row">
@@ -546,7 +560,6 @@ section{padding:5rem 0}
     <p class="label sh rv">Training &amp; Handover</p>
     <h2 class="rv">You'll know how to run your <em>systems</em> with confidence</h2>
     <p class="rv" style="margin-top:.5rem">Every project includes full handover and training — so you're never left dependent on a developer.</p>
-
     <div class="hand__g rv-stag rv">
       <div class="hand-c">
         <div class="hand-c__ico">📹</div>
@@ -577,10 +590,107 @@ section{padding:5rem 0}
         </div>
       </div>
     </div>
-
     <div class="hand__cta rv">
       <p>Every project includes full training, recorded walkthroughs, and written guides — so you're never left wondering how your systems work or how to update them.</p>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FEATURED CASE STUDIES
+     ═══════════════════════════════════════════ -->
+<section id="case-studies" style="background:var(--bg-alt);padding:7rem 0">
+  <div class="wrap">
+    <p class="label sh rv">Featured Case Studies</p>
+    <h2 class="rv">Real problems. Real solutions. Real <em>outcomes</em></h2>
+    
+    <!-- CASE STUDY 1: Refresh Health Club -->
+    <div class="cs-container rv">
+      <div>
+        <h3>Refresh Health Club</h3>
+        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Pilates Studio, Multi-Location</p>
+        
+        <div class="cs-div">
+          <p><em>The Problem</em></p>
+          <p>Their existing website was outdated and broken. Poor user experience meant customers struggled to find information or book classes. No lead capture system. Most critically: they were expanding to 3 locations (Reading, Pangbourne, Wokingham) but had no way to manage location-specific information, pricing, or booking availability.</p>
+        </div>
+        
+        <div class="cs-div">
+          <p><em>The Solution</em></p>
+          <p>Complete rebuild using custom GeneratePress child theme with 13+ PHP templates and location-based taxonomy. Every location has dedicated pages with local pricing, class schedules, and instructor profiles. Integrated MindBody API for real-time booking. Built capture-optimized funnel with trust signals and multiple conversion paths. Added backend management, security hardening, DNS migration, and ongoing support system.</p>
+        </div>
+        
+        <div class="cs-div">
+          <p><em>The Outcome</em></p>
+          <p><strong>✓ Multi-location management centralized</strong><br>✓ Booking funnel friction eliminated<br>✓ Lead capture doubled<br>✓ Significantly higher class bookings & retention<br>✓ 2+ year ongoing retainer relationship</p>
+        </div>
+      </div>
+      
+      <div class="cs-badge cs-refresh">
+        <p>Tech Stack</p>
+        <p>GeneratePress • PHP • MindBody API • PostgreSQL • Security Hardening</p>
+        <a href="https://refresh-health.com/" target="_blank" rel="noopener">View Live Site →</a>
+      </div>
+    </div>
+
+    <!-- CASE STUDY 2: Bracknell Third Spaces -->
+    <div class="cs-container rv">
+      <div>
+        <h3>Bracknell Third Spaces</h3>
+        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Community Initiative / Civic</p>
+        
+        <div class="cs-div">
+          <p><em>The Problem</em></p>
+          <p>A community-based initiative creating accessible public spaces, but nobody knew they existed. No centralized platform for discovery, information, or bookings. They needed a technical home that could help locals discover, engage with, and reserve spaces and events.</p>
+        </div>
+        
+        <div class="cs-div">
+          <p><em>The Solution</em></p>
+          <p>Clean, information-architecture-focused website designed for discovery. Comprehensive space profiles with imagery, descriptions, and availability calendars. Integrated booking system for inquiries and reservations. Event pages with clear CTAs. Built with accessibility as core requirement (WCAG compliance, semantic HTML). Simple backend for non-technical staff to manage multiple spaces and booking workflows.</p>
+        </div>
+        
+        <div class="cs-div">
+          <p><em>The Outcome</em></p>
+          <p><strong>✓ Community awareness increased significantly</strong><br>✓ Booking inquiries centralized & trackable<br>✓ Council has scalable platform for initiatives<br>✓ Model for other community projects<br>✓ Ongoing relationship with Bracknell Council</p>
+        </div>
+      </div>
+      
+      <div class="cs-badge cs-bracknell">
+        <p>Tech Stack</p>
+        <p>Next.js • Sanity CMS • Vercel • Accessibility-First • Booking Integrations</p>
+        <a href="https://www.bracknellthirdspaces.com/" target="_blank" rel="noopener">View Live Site →</a>
+      </div>
+    </div>
+
+    <!-- CASE STUDY 3: Marcianno Boxing Club -->
+    <div class="cs-container rv">
+      <div>
+        <h3>Marcianno Bexley &amp; District ABC</h3>
+        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Boxing Club</p>
+        
+        <div class="cs-div">
+          <p><em>The Problem</em></p>
+          <p>Growing amateur boxing club needed professional online presence from scratch. No existing website. They needed to attract new members, showcase their offering, and streamline class bookings — but had nowhere to start.</p>
+        </div>
+        
+        <div class="cs-div">
+          <p><em>The Solution</em></p>
+          <p>Complete website built from ground up, designed specifically for boxing clubs. Features: class timetables with real-time availability, membership tier pricing, instructor profiles with credentials, testimonials carousel, Bookwhen integration for seamless booking. Visual design emphasizes power & community (reds, blacks, whites) while staying modern. Mobile-first. Fully manageable by non-technical staff.</p>
+        </div>
+        
+        <div class="cs-div">
+          <p><em>The Outcome</em></p>
+          <p><strong>✓ Professional presence launched from zero</strong><br>✓ Class bookings now managed through site<br>✓ New member inquiries traceable & systemized<br>✓ Competitive positioning with established gyms<br>✓ Strong foundation for future features</p>
+        </div>
+      </div>
+      
+      <div class="cs-badge cs-marcianno">
+        <p>Tech Stack</p>
+        <p>WordPress • Bookwhen API • Responsive Design • Membership Integration</p>
+        <a href="https://www.marcianno-abc.com/" target="_blank" rel="noopener">View Live Site →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -888,6 +998,7 @@ section{padding:5rem 0}
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#process">How It Works</a>
+      <a href="#case-studies">Case Studies</a>
       <a href="#work">Work</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
