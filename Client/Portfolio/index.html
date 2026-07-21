@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Technical consultant building websites, custom tools, automation systems, and business efficiency solutions for UK businesses.">
-<meta name="keywords" content="web design UK, technical consultant, custom tools, automation, business efficiency, pilates studio website, wellness web design">
+<meta name="description" content="Technical solutions consultancy — websites, connected systems, and bespoke software for UK businesses. We map the problem, then build the smallest system that solves it.">
+<meta name="keywords" content="technical solutions UK, business systems consultant, custom software, automation, booking system integration, wellness web design">
 <meta name="author" content="Amanze">
-<meta property="og:title" content="Amanze — Websites, Tools & Technical Solutions">
-<meta property="og:description" content="Websites that work. Custom tools that scale. Systems that actually save you time.">
+<meta property="og:title" content="Corevva — Technical Solutions, Not Just Websites">
+<meta property="og:description" content="We build the systems your business is missing — from websites to connected systems to bespoke software.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F5F1EB">
-<title>Amanze — Websites, Tools & Technical Solutions</title>
+<title>Corevva — Technical Solutions for Non-Technical Problems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════
-   RESET & VARIABLES
+   RESET & VARIABLES  (colour scheme unchanged — kept as requested)
    ═══════════════════════════════════════════ */
 :root {
   --bg: #F5F1EB;
@@ -74,6 +74,7 @@ section{padding:5rem 0}
 .btn--dark{background:var(--heading);color:#fff}
 .btn--dark:hover{background:#333;transform:translateY(-2px)}
 .btn svg{width:16px;height:16px;flex-shrink:0}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important}
 
 /* ═══════════════════════════════════════════
    REVEAL ANIMATIONS
@@ -91,6 +92,15 @@ section{padding:5rem 0}
 .rv-stag.vis>*:nth-child(6){transition-delay:.34s}
 .rv-stag.vis>*{opacity:1;transform:translateY(0)}
 
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+/* Visible keyboard focus */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;
+}
+
 /* ═══════════════════════════════════════════
    NAV
    ═══════════════════════════════════════════ */
@@ -99,25 +109,25 @@ section{padding:5rem 0}
 .nav__in{display:flex;align-items:center;justify-content:space-between}
 .nav__logo{font-family:var(--serif);font-size:1.35rem;color:var(--heading)}
 .nav__logo span{color:var(--accent)}
-.nav__links{display:none;gap:2rem;align-items:center}
-@media(min-width:768px){.nav__links{display:flex}}
+.nav__links{display:none;gap:1.7rem;align-items:center}
+@media(min-width:900px){.nav__links{display:flex}}
 .nav__links a{font-size:.85rem;font-weight:500;color:var(--body);transition:color .3s}
 .nav__links a:hover{color:var(--accent)}
 .nav__cta{display:none}
-@media(min-width:768px){.nav__cta{display:inline-flex}}
+@media(min-width:900px){.nav__cta{display:inline-flex}}
 .nav__tog{display:flex;flex-direction:column;gap:5px;padding:4px;z-index:200}
-@media(min-width:768px){.nav__tog{display:none}}
+@media(min-width:900px){.nav__tog{display:none}}
 .nav__tog span{width:22px;height:2px;background:var(--heading);border-radius:2px;transition:all .3s}
 .nav__tog.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .nav__tog.open span:nth-child(2){opacity:0}
 .nav__tog.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* Mobile menu */
-.mob{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:5.5rem 1.5rem 2rem;flex-direction:column;gap:1rem}
+.mob{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;padding:5.5rem 1.5rem 2rem;flex-direction:column;gap:.85rem;overflow-y:auto}
 .mob.open{display:flex;animation:fadeIn .25s ease}
-.mob a{font-family:var(--serif);font-size:1.7rem;color:var(--heading);padding:.5rem 0;border-bottom:1px solid var(--border-lt);transition:color .3s}
+.mob a{font-family:var(--serif);font-size:1.5rem;color:var(--heading);padding:.45rem 0;border-bottom:1px solid var(--border-lt);transition:color .3s}
 .mob a:hover{color:var(--accent)}
-.mob .btn{margin-top:auto;justify-content:center}
+.mob .btn{margin-top:.5rem;justify-content:center}
 
 /* ═══════════════════════════════════════════
    HERO
@@ -125,7 +135,7 @@ section{padding:5rem 0}
 .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-top:5rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-15%;right:-8%;width:550px;height:550px;background:radial-gradient(circle,rgba(212,163,115,.11) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-8%;left:-4%;width:380px;height:380px;background:radial-gradient(circle,rgba(45,106,79,.05) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-.hero__c{position:relative;z-index:1;max-width:680px}
+.hero__c{position:relative;z-index:1;max-width:700px}
 .hero .label{margin-bottom:1.2rem;animation:fadeUp .8s ease both}
 .hero h1{margin-bottom:1.2rem;animation:fadeUp .8s ease .12s both}
 .hero__sub{font-size:clamp(.98rem,1.8vw,1.12rem);line-height:1.8;margin-bottom:2.5rem;color:var(--body);animation:fadeUp .8s ease .24s both}
@@ -136,41 +146,22 @@ section{padding:5rem 0}
 @media(max-width:767px){.hero__scroll{display:none}}
 
 /* ═══════════════════════════════════════════
-   ABOUT
+   PROBLEM STATEMENT (was "About")
    ═══════════════════════════════════════════ */
-.about{background:var(--bg-alt)}
-.about__g{display:grid;gap:2.5rem}
-@media(min-width:768px){.about__g{grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}}
-.about__txt p{margin-bottom:.8rem;font-size:.95rem}
-.about__cta-line{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--accent);margin-top:1rem}
-.about__stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.problem{background:var(--bg-alt)}
+.problem__g{display:grid;gap:2.5rem}
+@media(min-width:768px){.problem__g{grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}}
+.problem__txt p{margin-bottom:.9rem;font-size:.97rem}
+.problem__cta-line{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--accent);margin-top:1rem}
+.problem__stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .stat{padding:1.4rem;background:var(--bg);border-radius:var(--r);text-align:center}
 .stat__n{font-family:var(--serif);font-size:2rem;color:var(--accent);display:block;margin-bottom:.2rem}
 .stat__l{font-size:.82rem;line-height:1.4;color:var(--body)}
 
 /* ═══════════════════════════════════════════
-   SERVICES
+   HOW WE WORK (process)
    ═══════════════════════════════════════════ */
-.svc__g{display:grid;gap:1rem;margin-top:2.5rem}
-@media(min-width:640px){.svc__g{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){.svc__g{grid-template-columns:repeat(3,1fr)}}
-.svc-c{background:var(--bg-alt);border-radius:var(--r);padding:2rem 1.5rem;border:1px solid var(--border-lt);transition:all .4s;position:relative;overflow:hidden}
-.svc-c::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
-.svc-c:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 36px rgba(45,106,79,.07)}
-.svc-c:hover::after{transform:scaleX(1)}
-.svc-c__ico{width:46px;height:46px;border-radius:50%;background:rgba(45,106,79,.07);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.25rem}
-.svc-c h3{margin-bottom:.6rem}
-.svc-c p{font-size:.9rem;line-height:1.7}
-@media(min-width:1024px){
-  .svc__g .svc-c:nth-child(4){grid-column:1/2}
-  .svc__g .svc-c:nth-child(5){grid-column:2/4}
-  .svc__g .svc-c:nth-child(6){grid-column:2/4}
-}
-
-/* ═══════════════════════════════════════════
-   PROCESS
-   ═══════════════════════════════════════════ */
-.process{background:var(--bg-alt)}
+.process{background:var(--bg)}
 .proc__steps{display:grid;gap:0;margin-top:2.5rem}
 @media(min-width:768px){.proc__steps{grid-template-columns:repeat(4,1fr)}}
 .p-step{padding:1.5rem;border-bottom:1px solid var(--border-lt)}
@@ -179,33 +170,50 @@ section{padding:5rem 0}
 .p-step h3{margin-bottom:.5rem;font-size:1.1rem}
 .p-step p{font-size:.86rem;line-height:1.7}
 
-/* Platforms */
-.plat{margin-top:4rem;text-align:center}
-.plat>p{margin:0 auto 1.5rem;max-width:52ch;text-align:center;font-size:.95rem}
-.plat__row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.8rem 2.5rem;align-items:center}
-.plat__item{display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:.45;transition:opacity .3s;min-width:60px}
-.plat__item:hover{opacity:.9}
-.plat__item span{font-size:.68rem;font-weight:600;letter-spacing:.06em;color:var(--body-light)}
-
-/* Platform SVG icons */
-.pi{width:32px;height:32px;fill:var(--heading)}
+/* ═══════════════════════════════════════════
+   FRAMEWORK ("How we think" — six questions)
+   ═══════════════════════════════════════════ */
+.framework{background:var(--bg-alt)}
+.fw__g{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:640px){.fw__g{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.fw__g{grid-template-columns:repeat(3,1fr)}}
+.fw-c{background:var(--bg);border-radius:var(--r);padding:1.8rem 1.5rem;border:1px solid var(--border-lt);display:flex;gap:1rem;align-items:flex-start}
+.fw-c__n{font-family:var(--serif);font-size:1.8rem;color:var(--second);line-height:1;flex-shrink:0}
+.fw-c p{font-size:.92rem;line-height:1.65;color:var(--heading);margin-top:.1rem}
+.framework__foot{margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(45,106,79,.04);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0}
+.framework__foot p{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--heading);max-width:60ch}
 
 /* ═══════════════════════════════════════════
-   HANDOVER
+   SERVICES / TIERS
    ═══════════════════════════════════════════ */
-.hand__g{display:grid;gap:1rem;margin-top:2.5rem}
-@media(min-width:640px){.hand__g{grid-template-columns:1fr 1fr}}
-.hand-c{display:flex;gap:1rem;padding:1.5rem;background:var(--bg-alt);border-radius:var(--r);border:1px solid var(--border-lt)}
-.hand-c__ico{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:rgba(45,106,79,.07);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
-.hand-c h4{margin-bottom:.25rem}
-.hand-c p{font-size:.86rem;line-height:1.65}
-.hand__cta{margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(45,106,79,.04);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0}
-.hand__cta p{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--heading);max-width:56ch}
+.tier__g{display:grid;gap:1.2rem;margin-top:2.5rem}
+@media(min-width:900px){.tier__g{grid-template-columns:repeat(3,1fr)}}
+.tier-c{background:var(--bg-alt);border-radius:var(--r);padding:2.2rem 1.7rem;border:1px solid var(--border-lt);transition:all .4s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.tier-c::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.tier-c:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 36px rgba(45,106,79,.07)}
+.tier-c:hover::after{transform:scaleX(1)}
+.tier-c--feat{background:var(--heading);border-color:var(--heading)}
+.tier-c--feat h3,.tier-c--feat .tier-c__price{color:#fff}
+.tier-c--feat .label{color:var(--second)}
+.tier-c--feat p,.tier-c--feat li{color:rgba(255,255,255,.72)}
+.tier-c__price{font-family:var(--serif);font-size:1.5rem;color:var(--accent);margin:.6rem 0 .9rem}
+.tier-c__price span{font-family:var(--sans);font-size:.78rem;font-weight:400;color:var(--body-light)}
+.tier-c h3{margin-bottom:.3rem}
+.tier-c>p{font-size:.9rem;line-height:1.65;margin-bottom:1rem}
+.tier-c ul{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.4rem;flex:1}
+.tier-c li{font-size:.86rem;line-height:1.5;padding-left:1.2rem;position:relative}
+.tier-c li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:600}
+.tier-c--feat li::before{color:var(--second)}
+.tier-c .btn{width:100%;justify-content:center}
+
+.custom-note{margin-top:2.5rem;padding:1.8rem 1.7rem;background:var(--bg-alt);border-radius:var(--r);border:1px solid var(--border-lt);text-align:center}
+.custom-note h3{margin-bottom:.6rem}
+.custom-note p{margin:0 auto 1.2rem;font-size:.92rem;line-height:1.7}
 
 /* ═══════════════════════════════════════════
    CASE STUDIES
    ═══════════════════════════════════════════ */
-.cs-container{margin-bottom:2rem!important;padding:2.5rem 2rem!important;background:var(--bg)!important;border-radius:var(--r)!important;border:1px solid var(--border-lt)!important}
+.cs-container{margin-bottom:2rem;padding:2.5rem 2rem;background:var(--bg);border-radius:var(--r);border:1px solid var(--border-lt)}
 @media(min-width:768px){.cs-container{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}}
 .cs-container h3{margin-bottom:1.2rem}
 .cs-container .label{margin-bottom:.5rem;display:block}
@@ -225,40 +233,42 @@ section{padding:5rem 0}
 .cs-marcianno a{color:#8B4513}
 
 /* ═══════════════════════════════════════════
-   PRICING
+   TESTIMONIALS
    ═══════════════════════════════════════════ */
-.pricing{background:var(--bg-alt)}
-.pricing__note{padding:1.2rem 1.5rem;background:rgba(45,106,79,.03);border-left:3px solid var(--second);border-radius:0 var(--r) var(--r) 0;margin-bottom:2rem;font-size:.9rem;line-height:1.6;color:var(--body)}
-.pricing__note strong{color:var(--heading)}
-.price__g{display:grid;gap:1rem;margin-top:2.5rem}
-@media(min-width:640px){.price__g{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){.price__g{grid-template-columns:repeat(4,1fr)}}
-.pr-c{padding:2rem 1.5rem;background:var(--bg);border-radius:var(--r);border:1px solid var(--border-lt);display:flex;flex-direction:column;transition:all .3s}
-.pr-c:hover{border-color:var(--accent);transform:translateY(-2px)}
-.pr-c--feat{background:var(--heading);border-color:var(--heading);color:rgba(255,255,255,.72)}
-.pr-c--feat h3,.pr-c--feat .pr-c__price{color:#fff}
-.pr-c--feat .label{color:var(--second)}
-.pr-c--feat:hover{border-color:var(--heading);box-shadow:0 14px 44px rgba(27,27,27,.2)}
-.pr-c .label{margin-bottom:.3rem}
-.pr-c h3{margin-bottom:.8rem}
-.pr-c__price{font-family:var(--serif);font-size:1.7rem;color:var(--accent);margin-bottom:.8rem}
-.pr-c__price span{font-family:var(--sans);font-size:.82rem;font-weight:400;color:var(--body-light)}
-.pr-c--feat .pr-c__price span{color:rgba(255,255,255,.5)}
-.pr-c>p{font-size:.86rem;line-height:1.7;flex:1}
-.pr-c .btn{margin-top:1.2rem;width:100%;justify-content:center}
-
-/* Custom projects section */
-.custom-proj{margin-top:3rem;padding:2rem 1.5rem;background:var(--bg);border-radius:var(--r);border:1px solid var(--border-lt)}
-.custom-proj h3{margin-bottom:.8rem}
-.custom-proj > p{font-size:.9rem;line-height:1.7;margin-bottom:1rem}
-.custom-proj .btn{margin-top:1.2rem}
+.test{background:var(--bg-alt)}
+.test__g{display:grid;gap:1.2rem;margin-top:2.5rem}
+@media(min-width:768px){.test__g{grid-template-columns:1fr 1fr}}
+.tq{padding:2rem 1.5rem;background:var(--bg);border-radius:var(--r);position:relative}
+.tq::before{content:'\201C';font-family:var(--serif);font-size:3.5rem;color:var(--second-light);line-height:1;position:absolute;top:.8rem;left:1.2rem}
+.tq blockquote{font-size:.95rem;line-height:1.72;color:var(--heading);margin-bottom:1rem;position:relative;z-index:1}
+.tq cite{font-style:normal;font-size:.82rem;color:var(--body-light)}
+.tq cite strong{color:var(--heading);font-weight:500;display:block}
+.tq--pending{border:1.5px dashed var(--border);display:flex;align-items:center;justify-content:center;text-align:center;min-height:180px}
+.tq--pending p{font-size:.85rem;color:var(--body-light);font-style:italic;max-width:36ch}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2rem 3rem;padding:2.5rem 0 0;margin-top:2.5rem;border-top:1px solid var(--border-lt)}
+.trust span{font-size:.82rem;font-weight:500;color:var(--body-light);letter-spacing:.02em}
 
 /* ═══════════════════════════════════════════
-   PORTFOLIO
+   FAQ
+   ═══════════════════════════════════════════ */
+.faq__list{margin-top:2.5rem;display:flex;flex-direction:column;gap:.85rem;max-width:820px}
+.faq-item{background:var(--bg-alt);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.3rem 1.6rem;text-align:left;font-family:var(--sans);font-size:.98rem;font-weight:500;color:var(--heading)}
+.faq-q__ic{flex-shrink:0;width:22px;height:22px;position:relative}
+.faq-q__ic::before,.faq-q__ic::after{content:'';position:absolute;background:var(--accent);border-radius:2px;transition:transform .3s}
+.faq-q__ic::before{top:50%;left:0;width:100%;height:2px;transform:translateY(-50%)}
+.faq-q__ic::after{left:50%;top:0;width:2px;height:100%;transform:translateX(-50%)}
+.faq-item.open .faq-q__ic::after{transform:translateX(-50%) rotate(90deg);opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a__in{padding:0 1.6rem 1.4rem;font-size:.9rem;line-height:1.75;color:var(--body)}
+.faq-item.open .faq-a{max-height:400px}
+
+/* ═══════════════════════════════════════════
+   PORTFOLIO GRID
    ═══════════════════════════════════════════ */
 .port__g{display:grid;gap:1.2rem;margin-top:2.5rem}
 @media(min-width:640px){.port__g{grid-template-columns:1fr 1fr}}
-.proj{border-radius:var(--r);overflow:hidden;background:var(--bg-alt);border:1px solid var(--border-lt);transition:all .4s;cursor:pointer}
+.proj{border-radius:var(--r);overflow:hidden;background:var(--bg-alt);border:1px solid var(--border-lt);transition:all .4s;cursor:pointer;display:block}
 .proj:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,.05)}
 .proj__img{aspect-ratio:16/10;overflow:hidden;position:relative}
 .proj__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
@@ -271,7 +281,6 @@ section{padding:5rem 0}
 .proj h3{margin-bottom:.35rem}
 .proj p{font-size:.86rem;line-height:1.65}
 
-/* Placeholder visuals */
 .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.5rem;color:#fff;text-align:center;padding:1.5rem;line-height:1.3}
 .ph--chess{background:linear-gradient(135deg,#2C2C2C,#555)}
 .ph--bob{background:linear-gradient(135deg,#1B3A4B,#4A8FA8)}
@@ -282,20 +291,6 @@ section{padding:5rem 0}
 .ph--beauty{background:linear-gradient(135deg,#E8C4C4,#9B6B6B)}
 .ph--travel{background:linear-gradient(135deg,#1B2838,#3D6B99)}
 .ph--nutrition{background:linear-gradient(135deg,#D4A373,#8B6B4A)}
-
-/* ═══════════════════════════════════════════
-   TESTIMONIALS
-   ═══════════════════════════════════════════ */
-.test{background:var(--bg-alt)}
-.test__g{display:grid;gap:1.2rem;margin-top:2.5rem}
-@media(min-width:768px){.test__g{grid-template-columns:1fr 1fr}}
-.tq{padding:2rem 1.5rem;background:var(--bg);border-radius:var(--r);position:relative}
-.tq::before{content:'\201C';font-family:var(--serif);font-size:3.5rem;color:var(--second-light);line-height:1;position:absolute;top:.8rem;left:1.2rem}
-.tq blockquote{font-size:.95rem;line-height:1.72;color:var(--heading);margin-bottom:1rem;position:relative;z-index:1}
-.tq cite{font-style:normal;font-size:.82rem;color:var(--body-light)}
-.tq cite strong{color:var(--heading);font-weight:500;display:block}
-.trust{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2rem 3rem;padding:2.5rem 0 0;margin-top:2.5rem;border-top:1px solid var(--border-lt)}
-.trust span{font-size:.82rem;font-weight:500;color:var(--body-light);letter-spacing:.02em}
 
 /* ═══════════════════════════════════════════
    CONTACT
@@ -309,6 +304,12 @@ section{padding:5rem 0}
 .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--accent)}
 .field textarea{resize:vertical;min-height:120px}
 .field select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.field--row{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+@media(max-width:480px){.field--row{grid-template-columns:1fr}}
+.form-status{font-size:.85rem;padding:.7rem 1rem;border-radius:var(--r);display:none}
+.form-status.show{display:block}
+.form-status--ok{background:rgba(45,106,79,.08);color:var(--accent-h)}
+.form-status--err{background:rgba(217,7,7,.07);color:#B91C1C}
 .contact__alt{display:flex;flex-direction:column;gap:1.2rem}
 .alt-card{padding:1.3rem;background:var(--bg);border-radius:var(--r);border:1px solid var(--border-lt);display:flex;gap:1rem;align-items:flex-start;transition:border-color .3s}
 .alt-card:hover{border-color:var(--accent)}
@@ -327,7 +328,7 @@ section{padding:5rem 0}
 @media(min-width:768px){.footer__in{flex-direction:row;justify-content:space-between;text-align:left}}
 .footer__logo{font-family:var(--serif);font-size:1.2rem;color:#fff}
 .footer__logo span{color:var(--second)}
-.footer__links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+.footer__links{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center}
 .footer__links a{font-size:.82rem;transition:color .3s}
 .footer__links a:hover{color:#fff}
 .footer__copy{font-size:.75rem;width:100%;text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);margin-top:.5rem}
@@ -337,11 +338,6 @@ section{padding:5rem 0}
    ═══════════════════════════════════════════ */
 .sh{margin-bottom:.6rem}
 .sh+p{margin-bottom:0;font-size:.95rem}
-
-/* ═══════════════════════════════════════════
-   UTILITY
-   ═══════════════════════════════════════════ */
-.mb-0{margin-bottom:0!important}
 .center{text-align:center}
 .center p{margin-left:auto;margin-right:auto}
 </style>
@@ -354,17 +350,17 @@ section{padding:5rem 0}
      ═══════════════════════════════════════════ -->
 <nav class="nav" id="nav" aria-label="Main navigation">
   <div class="wrap nav__in">
-    <a href="#" class="nav__logo">Amanze<span>.</span></a>
+    <a href="#" class="nav__logo">Corevva<span>.</span></a>
     <ul class="nav__links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#problem">About</a></li>
+      <li><a href="#framework">How We Think</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#process">How It Works</a></li>
       <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#contact" class="btn btn--fill btn--sm nav__cta">Let's Talk</a>
-    <button class="nav__tog" id="navTog" aria-label="Toggle menu">
+    <a href="#contact" class="btn btn--fill btn--sm nav__cta">Book a Discovery Call</a>
+    <button class="nav__tog" id="navTog" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -372,14 +368,15 @@ section{padding:5rem 0}
 
 <!-- Mobile menu -->
 <div class="mob" id="mob">
-  <a href="#about" onclick="closeMob()">About</a>
-  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#problem" onclick="closeMob()">About</a>
   <a href="#process" onclick="closeMob()">How It Works</a>
+  <a href="#framework" onclick="closeMob()">How We Think</a>
+  <a href="#services" onclick="closeMob()">Services</a>
   <a href="#case-studies" onclick="closeMob()">Case Studies</a>
   <a href="#work" onclick="closeMob()">Work</a>
-  <a href="#pricing" onclick="closeMob()">Pricing</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
-  <a href="#contact" class="btn btn--fill" onclick="closeMob()">Let's Talk</a>
+  <a href="#contact" class="btn btn--fill" onclick="closeMob()">Book a Discovery Call</a>
 </div>
 
 <!-- ═══════════════════════════════════════════
@@ -388,12 +385,12 @@ section{padding:5rem 0}
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero__c">
-      <p class="label">Websites, tools & technical solutions</p>
-      <h1>Websites that work. Custom tools that <em>scale</em>. Systems that save you <em>time</em></h1>
-      <p class="hero__sub">I build websites, automation tools, and custom systems for UK businesses — from Pilates studios to enterprise workflows. Beautiful, fast, and built to actually move the needle for your business.</p>
+      <p class="label">Technical solutions for non-technical problems</p>
+      <h1>We build the <em>systems</em> your business is missing</h1>
+      <p class="hero__sub">Most businesses don't have a technology problem — they have a fragmentation problem. Booking systems that don't talk to the CRM. Websites that don't reflect how the business actually runs. Manual work that's cost hours every week for years. We fix that — with a website, a connected system, or bespoke software, depending on what the problem actually needs.</p>
       <div class="hero__btns">
-        <a href="#contact" class="btn btn--fill">Let's Talk About Your Project</a>
-        <a href="#work" class="btn btn--ghost">See My Work</a>
+        <a href="#contact" class="btn btn--fill">Book a Discovery Call</a>
+        <a href="#case-studies" class="btn btn--ghost">See Case Studies</a>
       </div>
     </div>
   </div>
@@ -404,23 +401,23 @@ section{padding:5rem 0}
 </section>
 
 <!-- ═══════════════════════════════════════════
-     ABOUT
+     PROBLEM STATEMENT
      ═══════════════════════════════════════════ -->
-<section class="about" id="about">
+<section class="problem" id="problem">
   <div class="wrap">
-    <div class="about__g">
-      <div class="about__txt rv">
-        <p class="label sh">About</p>
-        <h2>Technical solutions <em>tailored</em> to your business</h2>
+    <div class="problem__g">
+      <div class="problem__txt rv">
+        <p class="label sh">The Problem We Solve</p>
+        <h2>Fragmentation is the <em>real</em> cost</h2>
         <br>
-        <p>I'm Amanze — a technical consultant based in South East London. I specialise in building websites, custom tools, and automation systems for UK businesses across fitness, beauty, wellness, and beyond.</p>
-        <p>I've launched websites for multi-location Pilates studios, built automation scripts that connect spreadsheets to design software, created systems that save teams hours of manual work every week, and delivered custom tools that power business operations. My clients get solutions they can trust, with clear handover documentation and ongoing support.</p>
-        <p class="about__cta-line">You focus on your business. I'll handle the technical architecture.</p>
+        <p>A booking system that doesn't talk to the CRM. A website that doesn't reflect how the business actually runs. Manual admin work that's quietly cost hours every week for years. The result is always the same: lost customers, wasted staff time, and decisions made on gut feel instead of real data.</p>
+        <p>That's the gap we work in. We're a technical solutions consultancy based in South East London, working with businesses across fitness, beauty, community services, and e-commerce — connecting the tools they already use, and building the ones they don't have yet.</p>
+        <p class="problem__cta-line">You focus on your business. We handle the systems underneath it.</p>
       </div>
-      <div class="about__stats rv-stag rv">
+      <div class="problem__stats rv-stag rv">
         <div class="stat">
           <span class="stat__n">4+</span>
-          <span class="stat__l">Years building for UK businesses</span>
+          <span class="stat__l">Years building systems for UK businesses</span>
         </div>
         <div class="stat">
           <span class="stat__n">30+</span>
@@ -428,11 +425,11 @@ section{padding:5rem 0}
         </div>
         <div class="stat">
           <span class="stat__n">3</span>
-          <span class="stat__l">Studio launches supported</span>
+          <span class="stat__l">Multi-location systems launched</span>
         </div>
         <div class="stat">
           <span class="stat__n">100%</span>
-          <span class="stat__l">Training & handover included</span>
+          <span class="stat__l">Handover &amp; training included</span>
         </div>
       </div>
     </div>
@@ -440,158 +437,136 @@ section{padding:5rem 0}
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SERVICES
-     ═══════════════════════════════════════════ -->
-<section id="services">
-  <div class="wrap">
-    <p class="label sh rv">What I Offer</p>
-    <h2 class="rv">Built around what your <em>business</em> actually needs</h2>
-    <div class="svc__g rv-stag rv">
-      <div class="svc-c">
-        <div class="svc-c__ico">🏠</div>
-        <h3>Studio &amp; Salon Websites</h3>
-        <p>Complete websites for fitness studios, salons, and wellness brands. Integrated with booking systems, client-focused design, mobile-first, and built for you to update yourself.</p>
-      </div>
-      <div class="svc-c">
-        <div class="svc-c__ico">🛍</div>
-        <h3>Online Stores</h3>
-        <p>Sell products, gift vouchers, courses, or services online. Clean, trustworthy shop pages that match your brand — built on platforms suited to your business needs.</p>
-      </div>
-      <div class="svc-c">
-        <div class="svc-c__ico">✨</div>
-        <h3>Redesign &amp; Rebrand</h3>
-        <p>Already have a site but it's tired, slow, or hard to manage? I'll rebuild it with fresh design, faster performance, and a setup you can actually maintain yourself.</p>
-      </div>
-      <div class="svc-c">
-        <div class="svc-c__ico">🤖</div>
-        <h3>Custom Tools &amp; Automation</h3>
-        <p>Build custom solutions that solve your specific problems — Google Sheets integrations, data processing pipelines, design automation, or internal admin tools. Purpose-built for your workflow.</p>
-      </div>
-      <div class="svc-c">
-        <div class="svc-c__ico">📈</div>
-        <h3>Systems &amp; Optimization</h3>
-        <p>SEO optimization, performance tuning, security audits, and technical strategy. Ensure your digital infrastructure is running at peak efficiency.</p>
-      </div>
-      <div class="svc-c">
-        <div class="svc-c__ico">🤝</div>
-        <h3>Ongoing Support</h3>
-        <p>A monthly retainer for updates, tweaks, and technical peace of mind. Ideal if you want a technical partner without hiring in-house. You focus on clients — I keep systems running smoothly.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     PROCESS
+     HOW WE WORK (process strip)
      ═══════════════════════════════════════════ -->
 <section class="process" id="process">
   <div class="wrap">
     <div class="center">
-      <p class="label sh rv">How It Works</p>
+      <p class="label sh rv">How We Work</p>
       <h2 class="rv">Simple, transparent, and <em>no jargon</em></h2>
     </div>
     <div class="proc__steps rv-stag rv">
       <div class="p-step">
         <div class="p-step__n">01</div>
-        <h3>Discovery Call</h3>
-        <p>A 20-minute chat about your business, goals, and challenges. What's working, what isn't, what you need your solution to do. No jargon, no pressure.</p>
+        <h3>Map It</h3>
+        <p>A discovery call to understand what's actually broken, what the business runs on, and what a fix is really worth to you. No jargon, no pressure.</p>
       </div>
       <div class="p-step">
         <div class="p-step__n">02</div>
-        <h3>Scope &amp; Quote</h3>
-        <p>Based on our chat, I'll put together a clear proposal with scope, timeline, and pricing. For web projects, expect £250–£3,500+. Custom tools are quoted based on complexity.</p>
+        <h3>Design It</h3>
+        <p>We architect the smallest reliable system that solves the real problem — not the most impressive one — and put together a clear proposal with scope, timeline, and price.</p>
       </div>
       <div class="p-step">
         <div class="p-step__n">03</div>
-        <h3>Design &amp; Build</h3>
-        <p>I design and build your solution with check-ins at key milestones. You'll see progress throughout — not just a big reveal at the end. 25% deposit to get started.</p>
+        <h3>Build It</h3>
+        <p>Website, connected system, or bespoke software — whatever the problem needs. You'll see progress at key milestones, not just a big reveal at the end.</p>
       </div>
       <div class="p-step">
         <div class="p-step__n">04</div>
-        <h3>Launch &amp; Handover</h3>
-        <p>Your project goes live. Full training session, recorded walkthrough, and written guide so you know how to use and maintain it. 30 days of free support included.</p>
-      </div>
-    </div>
-    <div class="plat rv">
-      <p>I'll recommend the right platform and tools for your specific needs — whether that's WordPress, Shopify, custom-built solutions, or specialized tools for automation.</p>
-      <div class="plat__row">
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><path d="M4.4 4.4h10.2v10.2H4.4zm13 0h10.2v10.2H17.4zm-13 13h10.2v10.2H4.4zm13 0h10.2v10.2H17.4z" fill-opacity=".7"/></svg>
-          <span>WordPress</span>
-        </div>
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 5v22M5 16h22" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span>Squarespace</span>
-        </div>
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><path d="M8 8h16v16H8z" fill-opacity=".6"/><path d="M12 12h8v8h-8z" fill="var(--bg)"/></svg>
-          <span>Wix</span>
-        </div>
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><path d="M16 4L4 28h24L16 4z" fill-opacity=".65"/></svg>
-          <span>Shopify</span>
-        </div>
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><rect x="6" y="10" width="20" height="12" rx="3" fill-opacity=".55"/><path d="M11 15h10M11 19h6" stroke="var(--bg)" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span>Custom Build</span>
-        </div>
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><circle cx="16" cy="16" r="5" fill-opacity=".6"/><circle cx="8" cy="10" r="3" fill-opacity=".35"/><circle cx="24" cy="10" r="3" fill-opacity=".35"/><circle cx="8" cy="22" r="3" fill-opacity=".35"/><circle cx="24" cy="22" r="3" fill-opacity=".35"/></svg>
-          <span>Automation</span>
-        </div>
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><path d="M6 8l10 16L26 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
-          <span>Next.js</span>
-        </div>
-        <div class="plat__item">
-          <svg class="pi" viewBox="0 0 32 32"><path d="M6 6h8v8H6zm12 0h8v8h-8zM6 18h8v8H6zm12 0h8v8h-8z" fill-opacity=".4"/><path d="M10 10l12 12M22 10L10 22" stroke="currentColor" stroke-width="1.8"/></svg>
-          <span>Integrations</span>
-        </div>
+        <h3>Support It</h3>
+        <p>Full training, recorded walkthrough, and written documentation — so your team knows how to run it, and it's still working properly in six months.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     HANDOVER
+     FRAMEWORK — HOW WE THINK
      ═══════════════════════════════════════════ -->
-<section id="handover">
+<section class="framework" id="framework">
   <div class="wrap">
-    <p class="label sh rv">Training &amp; Handover</p>
-    <h2 class="rv">You'll know how to run your <em>systems</em> with confidence</h2>
-    <p class="rv" style="margin-top:.5rem">Every project includes full handover and training — so you're never left dependent on a developer.</p>
-    <div class="hand__g rv-stag rv">
-      <div class="hand-c">
-        <div class="hand-c__ico">📹</div>
-        <div>
-          <h4>Live Training Session</h4>
-          <p>A 45–60 minute screen-share where you learn to use and manage your solution. How to update content, run processes, troubleshoot common issues.</p>
-        </div>
+    <p class="label sh rv">How We Think</p>
+    <h2 class="rv">Before we build anything, we <em>ask</em></h2>
+    <p class="rv" style="margin-top:.5rem">These six questions turn a vague idea — "we need a new website" or "we need this automated" — into a system that actually holds up under real business conditions.</p>
+    <div class="fw__g rv-stag rv">
+      <div class="fw-c">
+        <span class="fw-c__n">01</span>
+        <p>What's this process actually costing you right now — time, money, or lost customers?</p>
       </div>
-      <div class="hand-c">
-        <div class="hand-c__ico">🎬</div>
-        <div>
-          <h4>Recorded Walkthrough</h4>
-          <p>A recording of the training session so you can revisit it anytime. Perfect for new team members or when you need a refresher.</p>
-        </div>
+      <div class="fw-c">
+        <span class="fw-c__n">02</span>
+        <p>What systems are you using, and do they actually talk to each other?</p>
       </div>
-      <div class="hand-c">
-        <div class="hand-c__ico">📋</div>
-        <div>
-          <h4>Written Documentation</h4>
-          <p>Clear, annotated guides covering common tasks and troubleshooting. Designed for someone with zero technical knowledge.</p>
-        </div>
+      <div class="fw-c">
+        <span class="fw-c__n">03</span>
+        <p>What needs a human decision, and what can be automated safely?</p>
       </div>
-      <div class="hand-c">
-        <div class="hand-c__ico">🛡</div>
-        <div>
-          <h4>30-Day Support</h4>
-          <p>After launch, 30 days of free support for questions, tweaks, and anything you need help with as you settle in.</p>
-        </div>
+      <div class="fw-c">
+        <span class="fw-c__n">04</span>
+        <p>What's the smallest system that actually solves this — not the most impressive one?</p>
+      </div>
+      <div class="fw-c">
+        <span class="fw-c__n">05</span>
+        <p>What happens when it breaks, or the data's wrong?</p>
+      </div>
+      <div class="fw-c">
+        <span class="fw-c__n">06</span>
+        <p>Who owns this once it's live — you, or do you need it managed for you?</p>
       </div>
     </div>
-    <div class="hand__cta rv">
-      <p>Every project includes full training, recorded walkthroughs, and written guides — so you're never left wondering how your systems work or how to update them.</p>
+    <div class="framework__foot rv">
+      <p>The goal isn't to sell you the most technology. It's to build the smallest system that solves the real problem — and make sure it still works long after we've delivered it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES / TIERS
+     ═══════════════════════════════════════════ -->
+<section id="services">
+  <div class="wrap">
+    <p class="label sh rv">What We Offer</p>
+    <h2 class="rv">Three ways we solve the <em>same problem</em></h2>
+    <p class="rv" style="margin-top:.5rem">Every engagement starts with a discovery call so we can recommend the right tier — not just the biggest one.</p>
+
+    <div class="tier__g rv-stag rv">
+      <div class="tier-c">
+        <p class="label">Tier 1 — the door-opener</p>
+        <h3>Web Presence</h3>
+        <div class="tier-c__price">£1,200–£2,500</div>
+        <p>Your business needs to exist properly online before anything else works.</p>
+        <ul>
+          <li>Custom-designed, mobile-responsive site</li>
+          <li>Booking link or contact form</li>
+          <li>Basic SEO setup</li>
+          <li>Full training &amp; handover</li>
+        </ul>
+        <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+      </div>
+
+      <div class="tier-c tier-c--feat">
+        <p class="label">Tier 2 — most requested</p>
+        <h3>Connected Systems</h3>
+        <div class="tier-c__price">£3,500–£8,000</div>
+        <p>Stop doing manually what your software should be doing automatically.</p>
+        <ul>
+          <li>Workflow mapping session</li>
+          <li>Booking / CRM / payment integration</li>
+          <li>Custom admin dashboard where needed</li>
+          <li>Staff handover &amp; training</li>
+        </ul>
+        <a href="#contact" class="btn btn--fill">Book a Discovery Call</a>
+      </div>
+
+      <div class="tier-c">
+        <p class="label">Tier 3 — the ceiling-raiser</p>
+        <h3>Bespoke Software &amp; AI</h3>
+        <div class="tier-c__price">£10,000+ <span>scoped per project</span></div>
+        <p>When off-the-shelf software can't do what your business actually needs.</p>
+        <ul>
+          <li>Full discovery &amp; architecture phase</li>
+          <li>Custom-built software</li>
+          <li>AI / automation components where relevant</li>
+          <li>Ongoing support option</li>
+        </ul>
+        <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="custom-note rv">
+      <h3>Not sure which tier fits?</h3>
+      <p>Most problems don't fit neatly into a box. Tell us what's broken, and we'll tell you honestly what it'll take to fix it — plus a retainer option (from £150/month) for ongoing support once you're live.</p>
+      <a href="#contact" class="btn btn--fill btn--sm">Tell Us What's Broken</a>
     </div>
   </div>
 </section>
@@ -599,36 +574,36 @@ section{padding:5rem 0}
 <!-- ═══════════════════════════════════════════
      FEATURED CASE STUDIES
      ═══════════════════════════════════════════ -->
-<section id="case-studies" style="background:var(--bg-alt);padding:7rem 0">
+<section id="case-studies" style="background:var(--bg-alt)">
   <div class="wrap">
     <p class="label sh rv">Featured Case Studies</p>
-    <h2 class="rv">Real problems. Real solutions. Real <em>outcomes</em></h2>
-    
+    <h2 class="rv">Real problems. Real systems. Real <em>outcomes</em></h2>
+
     <!-- CASE STUDY 1: Refresh Health Club -->
     <div class="cs-container rv">
       <div>
         <h3>Refresh Health Club</h3>
-        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Pilates Studio, Multi-Location</p>
-        
+        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Connected Systems — Multi-Location Pilates</p>
+
         <div class="cs-div">
           <p><em>The Problem</em></p>
-          <p>Their existing website was outdated and broken. Poor user experience meant customers struggled to find information or book classes. No lead capture system. Most critically: they were expanding to 3 locations (Reading, Pangbourne, Wokingham) but had no way to manage location-specific information, pricing, or booking availability.</p>
+          <p>Refresh was expanding to three locations (Reading, Pangbourne, Wokingham) but had no way to manage location-specific pricing, schedules, or booking availability. Their booking platform, website, and admin processes weren't connected — meaning manual reconciliation, an outdated site, and no reliable lead capture.</p>
         </div>
-        
+
         <div class="cs-div">
-          <p><em>The Solution</em></p>
-          <p>Complete rebuild using custom GeneratePress child theme with 13+ PHP templates and location-based taxonomy. Every location has dedicated pages with local pricing, class schedules, and instructor profiles. Integrated MindBody API for real-time booking. Built capture-optimized funnel with trust signals and multiple conversion paths. Added backend management, security hardening, DNS migration, and ongoing support system.</p>
+          <p><em>The System We Built</em></p>
+          <p>A custom multi-location architecture — dedicated location pages with independent pricing, schedules, and instructor profiles, all sitting on one connected backend. Integrated the MindBody/Healcode booking API for real-time availability across every site. Built a capture-optimised enquiry funnel, hardened security, and handled the full DNS migration.</p>
         </div>
-        
+
         <div class="cs-div">
           <p><em>The Outcome</em></p>
-          <p><strong>✓ Multi-location management centralized</strong><br>✓ Booking funnel friction eliminated<br>✓ Lead capture doubled<br>✓ Significantly higher class bookings & retention<br>✓ 2+ year ongoing retainer relationship</p>
+          <p><strong>✓ Multi-location management centralised into one system</strong><br>✓ Booking friction eliminated across all three sites<br>✓ Lead capture doubled<br>✓ Class bookings &amp; retention significantly higher<br>✓ 2+ year ongoing retainer relationship</p>
         </div>
       </div>
-      
+
       <div class="cs-badge cs-refresh">
-        <p>Tech Stack</p>
-        <p>GeneratePress • PHP • MindBody API • PostgreSQL • Security Hardening</p>
+        <p>Systems Used</p>
+        <p>Custom Backend • MindBody/Healcode API • Multi-Location Architecture • Security Hardening</p>
         <a href="https://refresh-health.com/" target="_blank" rel="noopener">View Live Site →</a>
       </div>
     </div>
@@ -637,27 +612,27 @@ section{padding:5rem 0}
     <div class="cs-container rv">
       <div>
         <h3>Bracknell Third Spaces</h3>
-        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Community Initiative / Civic</p>
-        
+        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Connected Systems — Community / Civic</p>
+
         <div class="cs-div">
           <p><em>The Problem</em></p>
-          <p>A community-based initiative creating accessible public spaces, but nobody knew they existed. No centralized platform for discovery, information, or bookings. They needed a technical home that could help locals discover, engage with, and reserve spaces and events.</p>
+          <p>A council-backed community initiative was creating accessible public spaces, but had no centralised system for discovery, information, or bookings — meaning local residents didn't know these spaces existed, and staff had no reliable way to track enquiries or reservations.</p>
         </div>
-        
+
         <div class="cs-div">
-          <p><em>The Solution</em></p>
-          <p>Clean, information-architecture-focused website designed for discovery. Comprehensive space profiles with imagery, descriptions, and availability calendars. Integrated booking system for inquiries and reservations. Event pages with clear CTAs. Built with accessibility as core requirement (WCAG compliance, semantic HTML). Simple backend for non-technical staff to manage multiple spaces and booking workflows.</p>
+          <p><em>The System We Built</em></p>
+          <p>An information-architecture-first platform built for discovery: comprehensive space profiles with availability calendars, a connected booking and enquiry system, and event pages with clear next steps. Built accessibility (WCAG compliance, semantic HTML) in from the start, with a simple backend that non-technical council staff can manage across multiple spaces.</p>
         </div>
-        
+
         <div class="cs-div">
           <p><em>The Outcome</em></p>
-          <p><strong>✓ Community awareness increased significantly</strong><br>✓ Booking inquiries centralized & trackable<br>✓ Council has scalable platform for initiatives<br>✓ Model for other community projects<br>✓ Ongoing relationship with Bracknell Council</p>
+          <p><strong>✓ Community awareness increased significantly</strong><br>✓ Booking enquiries centralised &amp; trackable<br>✓ Council now has a scalable platform for future initiatives<br>✓ Became the model for other community projects<br>✓ Ongoing relationship with Bracknell Council</p>
         </div>
       </div>
-      
+
       <div class="cs-badge cs-bracknell">
-        <p>Tech Stack</p>
-        <p>Next.js • Sanity CMS • Vercel • Accessibility-First • Booking Integrations</p>
+        <p>Systems Used</p>
+        <p>Next.js • Sanity CMS • Vercel • Accessibility-First • Booking Integration</p>
         <a href="https://www.bracknellthirdspaces.com/" target="_blank" rel="noopener">View Live Site →</a>
       </div>
     </div>
@@ -666,26 +641,26 @@ section{padding:5rem 0}
     <div class="cs-container rv">
       <div>
         <h3>Marcianno Bexley &amp; District ABC</h3>
-        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Boxing Club</p>
-        
+        <p class="label" style="color:var(--second);margin-bottom:.5rem;display:block">Web Presence — Boxing Club, Zero to Launch</p>
+
         <div class="cs-div">
           <p><em>The Problem</em></p>
-          <p>Growing amateur boxing club needed professional online presence from scratch. No existing website. They needed to attract new members, showcase their offering, and streamline class bookings — but had nowhere to start.</p>
+          <p>A growing amateur boxing club had no online presence at all — meaning no way to attract new members, showcase the offering, or take bookings for classes, while competing against established gyms with proper systems in place.</p>
         </div>
-        
+
         <div class="cs-div">
-          <p><em>The Solution</em></p>
-          <p>Complete website built from ground up, designed specifically for boxing clubs. Features: class timetables with real-time availability, membership tier pricing, instructor profiles with credentials, testimonials carousel, Bookwhen integration for seamless booking. Visual design emphasizes power & community (reds, blacks, whites) while staying modern. Mobile-first. Fully manageable by non-technical staff.</p>
+          <p><em>The System We Built</em></p>
+          <p>A full site built from the ground up: live class timetables, membership tier pricing, instructor profiles, and a Bookwhen integration for seamless class booking — designed so non-technical staff could run it day to day, with a visual identity that reflects the club's energy without looking amateur.</p>
         </div>
-        
+
         <div class="cs-div">
           <p><em>The Outcome</em></p>
-          <p><strong>✓ Professional presence launched from zero</strong><br>✓ Class bookings now managed through site<br>✓ New member inquiries traceable & systemized<br>✓ Competitive positioning with established gyms<br>✓ Strong foundation for future features</p>
+          <p><strong>✓ Professional presence launched from zero</strong><br>✓ Class bookings now managed entirely through the site<br>✓ New member enquiries traceable &amp; systemised<br>✓ Competitive positioning against established gyms<br>✓ Strong foundation for future features</p>
         </div>
       </div>
-      
+
       <div class="cs-badge cs-marcianno">
-        <p>Tech Stack</p>
+        <p>Systems Used</p>
         <p>WordPress • Bookwhen API • Responsive Design • Membership Integration</p>
         <a href="https://www.marcianno-abc.com/" target="_blank" rel="noopener">View Live Site →</a>
       </div>
@@ -695,64 +670,7 @@ section{padding:5rem 0}
 </section>
 
 <!-- ═══════════════════════════════════════════
-     PRICING
-     ═══════════════════════════════════════════ -->
-<section class="pricing" id="pricing">
-  <div class="wrap">
-    <div class="center">
-      <p class="label sh rv">Pricing</p>
-      <h2 class="rv">Transparent pricing, <em>no surprises</em></h2>
-      <p class="rv" style="margin-top:.5rem;margin-left:auto;margin-right:auto">Every project starts with a discovery call. Website prices are fixed. Custom builds are scoped to your requirements. <strong>Final pricing subject to scope and requirements.</strong></p>
-    </div>
-
-    <div class="pricing__note rv">
-      <strong>How it works:</strong> Website projects have fixed pricing (see below). Custom tools, automation, and advanced systems are quoted based on complexity and scope. <strong>25% deposit to get started.</strong> We'll confirm the full scope and final price after our discovery call.
-    </div>
-
-    <div class="price__g rv-stag rv">
-      <div class="pr-c">
-        <p class="label">Getting started</p>
-        <h3>Starter</h3>
-        <div class="pr-c__price">£250–800</div>
-        <p>A single-page site, landing page, or simple site for a launch or promotion. Mobile responsive, contact form or booking link, and full training handover.</p>
-        <a href="#contact" class="btn btn--ghost btn--sm">Get in Touch</a>
-      </div>
-
-      <div class="pr-c pr-c--feat">
-        <p class="label">Most popular</p>
-        <h3>Growth</h3>
-        <div class="pr-c__price">£800–2,000</div>
-        <p>A full multi-page website for an established business. Booking integration, payment processing, complex features, SEO, two revision rounds, full training, and 30-day post-launch support.</p>
-        <a href="#contact" class="btn btn--fill btn--sm">Let's Talk</a>
-      </div>
-
-      <div class="pr-c">
-        <p class="label">For bigger ambitions</p>
-        <h3>Scale</h3>
-        <div class="pr-c__price">£3,500+</div>
-        <p>E-commerce, multi-location sites, or custom functionality. Complex integrations, extended support, and bespoke solutions built to your specifications.</p>
-        <a href="#contact" class="btn btn--ghost btn--sm">Get in Touch</a>
-      </div>
-
-      <div class="pr-c">
-        <p class="label">Ongoing</p>
-        <h3>Retainer</h3>
-        <div class="pr-c__price">£50–250 <span>/month</span></div>
-        <p>A technical partner on call for updates, tweaks, hosting, monitoring, and strategy. Priority support within 24–48 hours.</p>
-        <a href="#contact" class="btn btn--ghost btn--sm">Get in Touch</a>
-      </div>
-    </div>
-
-    <div class="custom-proj rv">
-      <h3>Custom Tools &amp; Automation</h3>
-      <p>Building custom AI tools, automation workflows, data processing systems, or business efficiency solutions? These are scoped individually based on complexity, integrations, and requirements. <strong>25% deposit to get started.</strong> Let's chat about your needs in a discovery call and I'll put together a clear quote.</p>
-      <a href="#contact" class="btn btn--ghost btn--sm">Request a Quote</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     PORTFOLIO
+     SELECTED WORK
      ═══════════════════════════════════════════ -->
 <section id="work">
   <div class="wrap">
@@ -761,120 +679,111 @@ section{padding:5rem 0}
 
     <div class="port__g rv-stag rv">
 
-      <!-- LIVE: Refresh Health Club -->
       <a href="https://refresh-health.com/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
           <div class="ph ph--refresh">Refresh<br>Health Club</div>
           <span class="proj__badge">Live</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Pilates Studio</p>
+          <p class="proj__tag">Connected Systems</p>
           <h3>Refresh Health Club</h3>
-          <p>Multi-location Reformer Pilates brand across Reading, Pangbourne, and Wokingham. Full site rebuild with booking integration, location pages, and seamless client experience.</p>
+          <p>Multi-location Reformer Pilates brand across Reading, Pangbourne, and Wokingham. Connected booking, location pages, and admin in one system.</p>
         </div>
       </a>
 
-      <!-- LIVE: Bracknell Third Spaces -->
       <a href="https://www.bracknellthirdspaces.com/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
           <div class="ph ph--bracknell">Bracknell<br>Third Spaces</div>
           <span class="proj__badge">Live</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Community / Civic</p>
+          <p class="proj__tag">Connected Systems</p>
           <h3>Bracknell Third Spaces</h3>
-          <p>Community space initiative. Clean information architecture, accessible design, and comprehensive event and space booking management for Bracknell Council.</p>
+          <p>Community space initiative. Accessible design and comprehensive event/space booking management for Bracknell Council.</p>
         </div>
       </a>
 
-      <!-- LIVE: IfeChessDiaries -->
       <a href="https://ifechessdiaries.com/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
           <div class="ph ph--chess">IfeChess<br>Diaries</div>
           <span class="proj__badge">Live</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Photography</p>
+          <p class="proj__tag">Web Presence</p>
           <h3>IfeChessDiaries</h3>
-          <p>Chess photography portfolio with responsive gallery, lightbox animations, and clean editorial aesthetic. Fast load times, beautiful presentation.</p>
+          <p>Chess photography portfolio with responsive gallery, lightbox animations, and a clean editorial aesthetic.</p>
         </div>
       </a>
 
-      <!-- LIVE: Bricks of Business -->
       <a href="https://bricksofbusiness.netlify.app/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
           <div class="ph ph--bob">Bricks of<br>Business</div>
           <span class="proj__badge">Live</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Business Consulting</p>
+          <p class="proj__tag">Web Presence</p>
           <h3>Bricks of Business</h3>
-          <p>Professional consulting firm website. Clear service positioning, actionable messaging, and strong call-to-action strategy that builds client trust.</p>
+          <p>Professional consulting firm site. Clear service positioning and a strong call-to-action strategy that builds client trust.</p>
         </div>
       </a>
 
-      <!-- WIP: Urban Beauty -->
       <a href="https://urban-beauty-one.vercel.app/" target="_blank" rel="noopener" class="proj">
         <div class="proj__img">
           <div class="ph ph--urban">Urban<br>Beauty</div>
           <span class="proj__badge proj__badge--wip">In Progress</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Beauty & Aesthetics</p>
+          <p class="proj__tag">Connected Systems</p>
           <h3>Urban Beauty</h3>
-          <p>Beauty brand e-commerce and portfolio site. Service gallery, product showcase, online booking, and seamless customer experience. Currently in active development.</p>
+          <p>Beauty brand e-commerce and booking platform. Currently in active development.</p>
         </div>
       </a>
 
-      <!-- CONCEPT: FORMA Pilates -->
       <a href="work/forma-pilates.html" class="proj">
         <div class="proj__img">
           <div class="ph ph--pilates">FORMA<br>Pilates</div>
           <span class="proj__badge proj__badge--con">Concept</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Wellness Studio</p>
+          <p class="proj__tag">Concept</p>
           <h3>FORMA Pilates</h3>
-          <p>Boutique Reformer studio concept — class timetable with booking integration, instructor profiles, and membership pricing structure.</p>
+          <p>Boutique Reformer studio concept — timetable, booking integration, and membership pricing structure.</p>
         </div>
       </a>
 
-      <!-- CONCEPT: GLOW by Nia -->
       <a href="work/glow-by-nia.html" class="proj">
         <div class="proj__img">
           <div class="ph ph--beauty">GLOW<br>by Nia</div>
           <span class="proj__badge proj__badge--con">Concept</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Beauty</p>
+          <p class="proj__tag">Concept</p>
           <h3>GLOW by Nia</h3>
-          <p>Solo aesthetician portfolio — service menu, before/after gallery, online booking, and direct messaging for home-studio booking.</p>
+          <p>Solo aesthetician portfolio — service menu, before/after gallery, online booking.</p>
         </div>
       </a>
 
-      <!-- CONCEPT: ATLAS Travel -->
       <a href="work/atlas-travel.html" class="proj">
         <div class="proj__img">
           <div class="ph ph--travel">ATLAS<br>Concierge</div>
           <span class="proj__badge proj__badge--con">Concept</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Travel</p>
+          <p class="proj__tag">Concept</p>
           <h3>ATLAS Travel Concierge</h3>
-          <p>Luxury travel planning service — destination showcases, multi-step enquiry form, and testimonial carousel for high-touch service positioning.</p>
+          <p>Luxury travel planning service — destination showcases and a multi-step enquiry flow.</p>
         </div>
       </a>
 
-      <!-- CONCEPT: ROOTED Nutrition -->
       <a href="work/rooted-nutrition.html" class="proj">
         <div class="proj__img">
           <div class="ph ph--nutrition">ROOTED<br>Nutrition</div>
           <span class="proj__badge proj__badge--con">Concept</span>
         </div>
         <div class="proj__body">
-          <p class="proj__tag">Health &amp; Wellness</p>
+          <p class="proj__tag">Concept</p>
           <h3>ROOTED Nutrition</h3>
-          <p>Nutritionist and meal prep service — consultation booking, recipe blog, service packages, and lead magnet download for client acquisition.</p>
+          <p>Nutritionist and meal prep service — consultation booking, recipe blog, service packages.</p>
         </div>
       </a>
 
@@ -892,23 +801,85 @@ section{padding:5rem 0}
       <h2 class="rv">Real feedback from <em>real projects</em></h2>
     </div>
 
+    <!--
+      TODO: Replace the placeholder cards below with real quotes once collected
+      from Refresh / Marcianno / Bracknell. Never publish a quote that wasn't
+      actually given by that client.
+    -->
     <div class="test__g rv-stag rv">
-      <div class="tq">
-        <blockquote>Amanze completely transformed our online presence across all three locations. He understood our brand instantly and delivered a site we're genuinely proud of — and we can update it ourselves without any stress or technical knowledge.</blockquote>
-        <cite><strong>Refresh Health Club</strong>Reformer Pilates, Reading & Wokingham</cite>
+      <div class="tq tq--pending">
+        <p>Testimonial pending — request a short quote from Refresh Health Club</p>
       </div>
-      <div class="tq">
-        <blockquote>Working with Amanze was effortless from start to finish. He took time to understand the vision, delivered exactly what I imagined, and made the whole process smooth. The site looks incredible and loads like a dream.</blockquote>
-        <cite><strong>Ife Olayinka</strong>IfeChessDiaries, Liverpool</cite>
+      <div class="tq tq--pending">
+        <p>Testimonial pending — request a short quote from Marcianno ABC</p>
       </div>
     </div>
 
-    <!-- Trusted by -->
     <div class="trust rv">
       <span>Refresh Health Club</span>
-      <span>IfeChessDiaries</span>
-      <span>Bricks of Business</span>
       <span>Bracknell Third Spaces</span>
+      <span>Marcianno Bexley &amp; District ABC</span>
+      <span>IfeChessDiaries</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════ -->
+<section id="faq" style="background:var(--bg-alt)">
+  <div class="wrap">
+    <p class="label sh rv">Frequently Asked</p>
+    <h2 class="rv">Questions we get on <em>discovery calls</em></h2>
+
+    <div class="faq__list rv">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How long does a project take?
+          <span class="faq-q__ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a__in">Smaller projects typically take 5–7 days. Every estimate and turnaround is tailored to the size and complexity of the project, and we'll always work to your deadline where possible.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How many revisions are included?
+          <span class="faq-q__ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a__in">This depends on project complexity. Simpler projects (e.g. standard websites) include 2 rounds of revisions. Larger, more complex builds include additional rounds, scoped during the discovery call.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How does payment work?
+          <span class="faq-q__ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a__in">We require a 50% deposit upfront, with the remaining 50% due on completion. For larger projects, we also offer staged payment plans (e.g. monthly instalments) — agreed during the proposal stage.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you offer ongoing support after launch?
+          <span class="faq-q__ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a__in">Yes. We understand that managing the technical side of a business alongside everything else is a hassle — that's why we offer retainer packages, custom-built around your specific ongoing needs.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What if I already have a website or system in place?
+          <span class="faq-q__ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a__in">That's entirely up to you. We're happy to work with what you have or build something new — during the discovery call, we'll recommend whichever approach genuinely serves your business best, not just the bigger job.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What if my needs change partway through the project?
+          <span class="faq-q__ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a__in">We try to stay flexible wherever possible — this is exactly why we run discovery calls upfront, to understand your needs properly before starting. If significant scope changes come up mid-project, we'll schedule a follow-up discovery call to reassess and re-scope together.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -920,40 +891,59 @@ section{padding:5rem 0}
   <div class="wrap">
     <p class="label sh rv">Get in Touch</p>
     <h2 class="rv">Let's talk about your <em>next project</em></h2>
-    <p class="rv" style="margin-top:.5rem">Tell me a bit about what you need and I'll get back to you within 24 hours with a clear next step.</p>
+    <p class="rv" style="margin-top:.5rem">Tell us a bit about what's broken and we'll get back to you within 24 hours with a clear next step.</p>
 
     <div class="contact__g rv">
-      <form class="contact__form" action="https://formspree.io/f/xovadwaq" method="POST">
-        <div style="display:grid;gap:1rem;grid-template-columns:1fr 1fr">
+      <form class="contact__form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field--row">
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required placeholder="Your name">
           </div>
           <div class="field">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" placeholder="Your business">
+          </div>
+        </div>
+        <div class="field--row">
+          <div class="field">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required placeholder="you@example.com">
           </div>
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="07000 000000">
+          </div>
         </div>
         <div class="field">
-          <label for="service">What do you need?</label>
+          <label for="service">What are you looking for?</label>
           <select id="service" name="service">
-            <option value="">Select a service</option>
-            <option value="Studio / Salon Website">Studio / Salon Website</option>
-            <option value="E-commerce / Online Store">E-commerce / Online Store</option>
-            <option value="Redesign & Rebrand">Redesign &amp; Rebrand</option>
-            <option value="Custom Tool / Automation">Custom Tool / Automation</option>
-            <option value="Systems & Optimization">Systems &amp; Optimization</option>
-            <option value="Ongoing Support">Ongoing Support</option>
-            <option value="Not sure yet">Not sure yet — let's chat</option>
+            <option value="">Select an option</option>
+            <option value="Web Presence">Website / Online Presence</option>
+            <option value="Connected Systems">Connecting my existing systems</option>
+            <option value="Bespoke Software">Custom software or automation</option>
+            <option value="Not sure">Not sure — need advice</option>
           </select>
         </div>
         <div class="field">
-          <label for="message">Tell me about your project</label>
-          <textarea id="message" name="message" placeholder="What does your business do? What problem are we solving?"></textarea>
+          <label for="budget">Rough budget</label>
+          <select id="budget" name="budget">
+            <option value="">Select a range</option>
+            <option value="Under £2k">Under £2k</option>
+            <option value="£2k-£8k">£2k–£8k</option>
+            <option value="£8k+">£8k+</option>
+            <option value="Let's discuss">Let's discuss</option>
+          </select>
         </div>
-        <button type="submit" class="btn btn--fill" style="align-self:flex-start">Send Message
+        <div class="field">
+          <label for="message">What's the problem you're trying to solve?</label>
+          <textarea id="message" name="message" placeholder="A couple of lines is plenty — we'll dig into the detail on the call."></textarea>
+        </div>
+        <button type="submit" class="btn btn--fill" id="submitBtn" style="align-self:flex-start">
+          <span id="submitLabel">Send Message</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
+        <div class="form-status" id="formStatus" role="status"></div>
       </form>
 
       <div class="contact__alt">
@@ -969,7 +959,7 @@ section{padding:5rem 0}
           <div class="alt-card__ico">💬</div>
           <div>
             <h4>WhatsApp</h4>
-            <p>Quick question or project idea? Message me directly.</p>
+            <p>Quick question or project idea? Message us directly.</p>
             <a href="https://wa.me/447000000000" target="_blank" rel="noopener">Message on WhatsApp →</a>
           </div>
         </div>
@@ -978,7 +968,7 @@ section{padding:5rem 0}
           <div>
             <h4>Email</h4>
             <p>Old school always works.</p>
-            <a href="mailto:amanzeao7@gmail.com">amanzeao7@gmail.com</a>
+            <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
           </div>
         </div>
 
@@ -993,17 +983,16 @@ section{padding:5rem 0}
      ═══════════════════════════════════════════ -->
 <footer class="footer">
   <div class="wrap footer__in">
-    <a href="#" class="footer__logo">Amanze<span>.</span></a>
+    <a href="#" class="footer__logo">Corevva<span>.</span></a>
     <div class="footer__links">
-      <a href="#about">About</a>
+      <a href="#problem">About</a>
       <a href="#services">Services</a>
-      <a href="#process">How It Works</a>
       <a href="#case-studies">Case Studies</a>
       <a href="#work">Work</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
-    <p class="footer__copy">© 2026 Amanze. All rights reserved. Based in South East London, UK.</p>
+    <p class="footer__copy">© 2026 Corevva. All rights reserved. Based in South East London, UK.</p>
   </div>
 </footer>
 
@@ -1013,7 +1002,6 @@ section{padding:5rem 0}
 <script>
 // ── Nav scroll state ──
 const nav = document.getElementById('nav');
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
@@ -1022,13 +1010,15 @@ window.addEventListener('scroll', () => {
 const tog = document.getElementById('navTog');
 const mob = document.getElementById('mob');
 tog.addEventListener('click', () => {
-  tog.classList.toggle('open');
-  mob.classList.toggle('open');
-  document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+  const isOpen = mob.classList.toggle('open');
+  tog.classList.toggle('open', isOpen);
+  tog.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 function closeMob() {
   tog.classList.remove('open');
   mob.classList.remove('open');
+  tog.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 
@@ -1057,23 +1047,55 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ── Lazy load images (native + fallback) ──
-if ('loading' in HTMLImageElement.prototype) {
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-    if (img.dataset.src) img.src = img.dataset.src;
-  });
-} else {
-  const lazyObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const img = e.target;
-        if (img.dataset.src) img.src = img.dataset.src;
-        lazyObs.unobserve(img);
-      }
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+  btn.addEventListener('click', () => {
+    const willOpen = !item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
     });
+    if (willOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   });
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => lazyObs.observe(img));
-}
+});
+
+// ── Contact form → Formspree ──
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitLabel = document.getElementById('submitLabel');
+const formStatus = document.getElementById('formStatus');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  submitBtn.disabled = true;
+  submitLabel.textContent = 'Sending…';
+  formStatus.className = 'form-status';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!res.ok) throw new Error('Request failed');
+
+    formStatus.textContent = "Thanks — we'll be in touch within 24 hours.";
+    formStatus.className = 'form-status show form-status--ok';
+    form.reset();
+  } catch (err) {
+    formStatus.textContent = "Something went wrong sending that — please email hello@yourdomain.com directly.";
+    formStatus.className = 'form-status show form-status--err';
+  } finally {
+    submitBtn.disabled = false;
+    submitLabel.textContent = 'Send Message';
+  }
+});
 </script>
 
 </body>
